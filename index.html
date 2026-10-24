@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdul Ghofur Almiqbadi — Mobile Developer (Flutter)</title>
+<meta name="description" content="Information systems student building local-first mobile apps with Flutter. Author of Arkustudio, a suite of five offline-first productivity apps.">
+<link rel="canonical" href="https://furalmiqbadi.github.io/">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abdul Ghofur Almiqbadi — Mobile Developer">
+<meta property="og:description" content="Local-first mobile apps built with Flutter.">
+<meta property="og:url" content="https://furalmiqbadi.github.io/">
+<meta property="og:image" content="https://furalmiqbadi.github.io/assets/img/notes.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abdul Ghofur Almiqbadi",
+  "jobTitle": "Mobile Developer",
+  "url": "https://furalmiqbadi.github.io/",
+  "sameAs": ["https://github.com/furalmiqbadi"],
+  "knowsAbout": ["Flutter", "Dart", "Mobile Development", "Offline-first architecture"]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/">Abdul Ghofur Almiqbadi</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cv" href="cv/">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="wrap hero">
+    <div>
+      <p class="eyebrow">Mobile developer · Flutter · Yogyakarta, ID</p>
+      <h1>I build <em>local-first</em> mobile apps that keep working without a connection.</h1>
+      <p class="lead">
+        Information systems student and independent developer. I designed and shipped Arkustudio —
+        five Flutter apps (notes, tasks, money, habits, calendar) that share one offline-first core,
+        an encrypted vault, and a single design system.
+      </p>
+      <div class="actions">
+        <a class="btn" href="cv/">Read my CV</a>
+        <a class="btn btn--ghost" href="https://github.com/furalmiqbadi">GitHub ↗</a>
+      </div>
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt>Focus</dt>
+        <dd>Flutter · Dart</dd>
+      </div>
+      <div>
+        <dt>Shipped</dt>
+        <dd>5 apps, 1 core</dd>
+      </div>
+      <div>
+        <dt>Storage</dt>
+        <dd>SQLite + Drift</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd>Open for internship</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="section__title">Selected work</h2>
+        <p class="section__meta">Arkustudio suite · 2026</p>
+      </div>
+
+      <div class="work-list">
+
+        <article class="work">
+          <span class="work__num">01</span>
+          <div class="work__body">
+            <h3>Notes</h3>
+            <p>
+              Rich-text notes with checklists, labels, reminders and PIN-locked entries.
+              Locked notes are encrypted with AES-GCM using a key derived locally via PBKDF2 —
+              no plaintext ever leaves the device.
+            </p>
+            <ul class="tags">
+              <li>Flutter</li>
+              <li>Rich text</li>
+              <li>AES-GCM</li>
+            </ul>
+          </div>
+          <figure class="work__shot">
+            <img src="assets/img/notes.jpg" alt="Notes home screen with grouped note list" width="360" height="800" loading="lazy" decoding="async">
+          </figure>
+        </article>
+
+        <article class="work">
+          <span class="work__num">02</span>
+          <div class="work__body">
+            <h3>Tasks</h3>
+            <p>
+              Task capture with lists, starring and completion states. Tasks surface in the
+              calendar automatically, so there is one source of truth for what is due today.
+            </p>
+            <ul class="tags">
+              <li>Flutter</li>
+              <li>State management</li>
+              <li>Offline sync</li>
+            </ul>
+          </div>
+          <figure class="work__shot">
+            <img src="assets/img/tasks.jpg" alt="Tasks screen with empty state" width="360" height="800" loading="lazy" decoding="async">
+          </figure>
+        </article>
+
+        <article class="work">
+          <span class="work__num">03</span>
+          <div class="work__body">
+            <h3>Money</h3>
+            <p>
+              Multi-account expense tracking with monthly budgets and category breakdowns.
+              Amounts are stored as integers in minor units, so totals never drift from
+              floating-point rounding.
+            </p>
+            <ul class="tags">
+              <li>Drift</li>
+              <li>Data modelling</li>
+              <li>Unit tests</li>
+            </ul>
+          </div>
+          <figure class="work__shot">
+            <img src="assets/img/money.jpg" alt="Money overview with balance, income and expenses" width="360" height="800" loading="lazy" decoding="async">
+          </figure>
+        </article>
+
+        <article class="work">
+          <span class="work__num">04</span>
+          <div class="work__body">
+            <h3>Habits</h3>
+            <p>
+              Daily habit tracking with streaks, weekly check-in strips and long-term statistics.
+              Completed days are recalculated from stored events rather than cached counters.
+            </p>
+            <ul class="tags">
+              <li>Flutter</li>
+              <li>Statistics</li>
+              <li>Local DB</li>
+            </ul>
+          </div>
+          <figure class="work__shot">
+            <img src="assets/img/habits.jpg" alt="Habits today screen with streak strip" width="360" height="800" loading="lazy" decoding="async">
+          </figure>
+        </article>
+
+        <article class="work">
+          <span class="work__num">05</span>
+          <div class="work__body">
+            <h3>Calendar</h3>
+            <p>
+              Agenda, week and month views that merge events, tasks and transactions into one
+              timeline. Date range queries are indexed so month view renders in a single pass.
+            </p>
+            <ul class="tags">
+              <li>Flutter</li>
+              <li>SQL indexes</li>
+              <li>Shared core</li>
+            </ul>
+          </div>
+          <figure class="work__shot">
+            <img src="assets/img/calendar.jpg" alt="Calendar agenda screen with empty state" width="360" height="800" loading="lazy" decoding="async">
+          </figure>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="section__title">About</h2>
+        <p class="section__meta">How I work</p>
+      </div>
+
+      <div class="about">
+        <div>
+          <p>
+            I work on one problem: keeping a personal app fast and private when the network is not
+            there. Arkustudio is built as a monorepo — shared packages for design tokens, data
+            access and encryption, with each app as a thin feature layer on top.
+          </p>
+          <p>
+            I care about the boring parts: migration paths that do not lose rows, encryption keys
+            derived on a background isolate so the UI never blocks, and tests around money and
+            cryptography where a silent bug is expensive.
+          </p>
+          <p>
+            Currently looking for a software engineering internship where I can work on mobile or
+            backend systems with people who review code seriously.
+          </p>
+
+          <div class="edu">
+            <p class="edu__school">Universitas Nusantara</p>
+            <p class="edu__meta">Bachelor of Information Systems · 2023 — 2027 (expected) · GPA 3.72 / 4.00</p>
+          </div>
+        </div>
+
+        <dl class="skills">
+          <div>
+            <dt>Languages</dt>
+            <dd>Dart, Kotlin, TypeScript, SQL</dd>
+          </div>
+          <div>
+            <dt>Mobile</dt>
+            <dd>Flutter, Material 3, adaptive layouts, local authentication</dd>
+          </div>
+          <div>
+            <dt>Data</dt>
+            <dd>SQLite, Drift, Supabase, REST, schema migrations</dd>
+          </div>
+          <div>
+            <dt>Tooling</dt>
+            <dd>Git, GitHub Actions, Android Studio, Figma</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="section__title">Contact</h2>
+        <p class="section__meta">Replies within a day</p>
+      </div>
+
+      <p class="contact__title">Looking for an intern who ships? Let's talk.</p>
+
+      <div class="contact-links">
+        <a href="mailto:furalmiqbadi@gmail.com">
+          <span class="label">Email</span>
+          <span class="value">furalmiqbadi@gmail.com</span>
+        </a>
+        <a href="https://github.com/furalmiqbadi">
+          <span class="label">GitHub</span>
+          <span class="value">github.com/furalmiqbadi</span>
+        </a>
+        <a href="cv/">
+          <span class="label">CV</span>
+          <span class="value">Web version + PDF</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span>© 2026 Abdul Ghofur Almiqbadi</span>
+    <span>Static site · GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>
