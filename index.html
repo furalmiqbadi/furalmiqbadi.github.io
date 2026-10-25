@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abdul Ghofur Almiqbadi — Frontend Developer</title>
-<meta name="description" content="D4 Informatics student at Politeknik Negeri Malang. Frontend developer on three team projects built with PHP, Laravel, and Flutter.">
+<title>Abdul Ghofur Almiqbadi - Frontend Developer</title>
+<meta name="description" content="Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang. Frontend developer pada tiga proyek kelompok dengan PHP, Laravel, dan Flutter.">
 <link rel="canonical" href="https://furalmiqbadi.github.io/">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
+<script src="assets/js/i18n.js" defer></script>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Abdul Ghofur Almiqbadi — Frontend Developer">
-<meta property="og:description" content="Frontend developer building web and mobile products with PHP, Laravel, and Flutter.">
+<meta property="og:title" content="Abdul Ghofur Almiqbadi - Frontend Developer">
+<meta property="og:description" content="Frontend developer yang mengerjakan web dan mobile dengan PHP, Laravel, dan Flutter.">
 <meta property="og:url" content="https://furalmiqbadi.github.io/">
+<meta property="og:locale" content="id_ID">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,7 +23,7 @@
   "url": "https://furalmiqbadi.github.io/",
   "email": "abdulghofuralmiqbadi2@gmail.com",
   "address": { "@type": "PostalAddress", "addressLocality": "Malang", "addressRegion": "East Java", "addressCountry": "ID" },
-  "sameAs": ["https://github.com/furalmiqbadi"],
+  "sameAs": ["https://github.com/furalmiqbadi", "https://www.linkedin.com/in/furalmiqbadi/"],
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Politeknik Negeri Malang" },
   "knowsAbout": ["PHP", "Laravel", "Flutter", "Tailwind CSS", "TensorFlow Lite"]
 }
@@ -32,12 +34,15 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="/">Abdul Ghofur Almiqbadi</a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a class="nav-cv" href="cv/">CV</a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="#work" data-i18n="nav.work">Proyek</a>
+      <a href="#about" data-i18n="nav.about">Tentang</a>
+      <a href="#contact" data-i18n="nav.contact">Kontak</a>
     </nav>
+    <div class="lang" role="group" aria-label="Pilih bahasa">
+      <button type="button" class="lang__btn is-active" data-lang="id" aria-pressed="true">ID</button>
+      <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
   </div>
 </header>
 
@@ -46,33 +51,29 @@
   <section class="wrap hero">
     <div>
       <p class="eyebrow">Frontend developer · Malang, ID</p>
-      <h1>I turn other people's designs and APIs into pages that actually <em>work</em>.</h1>
-      <p class="lead">
-        D4 Informatics student at Politeknik Negeri Malang. I have shipped the frontend of three
-        team projects: a campus lab profile site in PHP, a race-photo marketplace in Laravel, and a
-        Flutter sign-language app where I also handle the on-device model and the team's planning.
+      <h1 data-i18n="hero.title" data-i18n-html>Desain dan API dari tim lain saya jadikan halaman yang <em>bisa dipakai</em>.</h1>
+      <p class="lead" data-i18n="hero.lead">
+        Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang, semester 5, IPK 3.78. Tiga proyek
+        kelompok sudah saya kerjakan: situs profil laboratorium dengan PHP, marketplace foto lari
+        dengan Laravel, dan aplikasi bahasa isyarat dengan Flutter.
       </p>
       <div class="actions">
-        <a class="btn" href="cv/">Read my CV</a>
+        <a class="btn" href="#work" data-i18n="hero.cta">Lihat proyek</a>
         <a class="btn btn--ghost" href="https://github.com/furalmiqbadi">GitHub ↗</a>
       </div>
     </div>
 
     <dl class="facts">
       <div>
-        <dt>Focus</dt>
-        <dd>Frontend · Web &amp; mobile</dd>
+        <dt data-i18n="facts.focus.label">Fokus</dt>
+        <dd data-i18n="facts.focus.value">Frontend, web &amp; mobile</dd>
       </div>
       <div>
-        <dt>Stack</dt>
+        <dt data-i18n="facts.stack.label">Stack</dt>
         <dd>PHP · Laravel · Flutter</dd>
       </div>
       <div>
-        <dt>Team size</dt>
-        <dd>4–6 people</dd>
-      </div>
-      <div>
-        <dt>GPA</dt>
+        <dt data-i18n="facts.gpa.label">IPK</dt>
         <dd>3.78 / 4.00</dd>
       </div>
     </dl>
@@ -81,8 +82,7 @@
   <section class="section" id="work">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="section__title">Selected work</h2>
-        <p class="section__meta">Project-based learning · 2025–2026</p>
+        <h2 class="section__title">Project-based learning</h2>
       </div>
 
       <div class="work-list">
@@ -90,11 +90,13 @@
         <article class="work">
           <span class="work__num">01</span>
           <div class="work__body">
-            <h3>Lab Profile Website</h3>
-            <p class="work__meta">Frontend, with backend contributions · 6 people · Oct–Dec 2025</p>
-            <p>
-              A public profile site for a campus laboratory: home, about, catalog, gallery, news,
-              lecturer profiles and student work pages, plus an admin area for managing all of it.
+            <h3 data-i18n="work.1.title">Website - Lab Profile Multimedia and Mobile Technology</h3>
+            <p class="work__meta" data-i18n="work.1.meta">Frontend designer, sedikit backend · 6 orang · Okt-Des 2025</p>
+            <p data-i18n="work.1.desc">
+              Situs profil laboratorium kampus yang berisi halaman beranda, tentang lab, katalog
+              proyek, galeri lab, berita lab, profil dosen lab, dan karya mahasiswa. Saya sebagai
+              frontend designer yang mengerjakan beberapa tampilan, sedikit controller dan query,
+              serta halaman admin yang dipakai mengelola halaman.
             </p>
             <ul class="tags">
               <li>PHP</li>
@@ -111,13 +113,13 @@
         <article class="work">
           <span class="work__num">02</span>
           <div class="work__body">
-            <h3>KeJepret — Race Photo Marketplace</h3>
-            <p class="work__meta">Frontend · 4 people · Feb–Jun 2026</p>
-            <p>
-              A marketplace where runners find photos of themselves from a race through AI face
-              search, then buy the originals from the photographer. Frontend built in Blade and
-              Tailwind over Laravel, covering the runner search, cart, checkout and photographer
-              dashboard flows.
+            <h3 data-i18n="work.2.title">Website - KeJepret: Marketplace untuk menjual foto pelari</h3>
+            <p class="work__meta" data-i18n="work.2.meta">Frontend designer · 4 orang · Feb-Jun 2026</p>
+            <p data-i18n="work.2.desc">
+              Situs web untuk para pelari yang mencari fotonya sendiri menggunakan pencarian wajah.
+              Hasilnya tampil dengan watermark, dan versi aslinya bisa didapat dari fotografer
+              setelah membelinya. Saya sebagai frontend designer yang mengerjakan tampilan dengan
+              Blade dan Tailwind di alur pencarian, keranjang, checkout, dan dashboard fotografer.
             </p>
             <ul class="tags">
               <li>Laravel 12</li>
@@ -134,12 +136,13 @@
         <article class="work">
           <span class="work__num">03</span>
           <div class="work__body">
-            <h3>Sign.L — Sign Language Learning App</h3>
-            <p class="work__meta">Project manager, frontend, machine learning · 5 people · Aug 2026 – present</p>
-            <p>
-              A mobile app for learning BISINDO with on-device gesture recognition and a gamified
-              learning path. I prepared the TFLite classifier for the 26 alphabet signs and the
-              camera preprocessing pipeline (crop, resize, normalize) that feeds it.
+            <h3 data-i18n="work.3.title">Mobile - Sign.L: Aplikasi untuk belajar bahasa isyarat BISINDO (Ongoing)</h3>
+            <p class="work__meta" data-i18n="work.3.meta">Project manager, frontend, machine learning · 5 orang · Agu 2026-sekarang</p>
+            <p data-i18n="work.3.desc">
+              Aplikasi mobile untuk belajar BISINDO dengan kamera yang membaca bentuk tangan untuk
+              mengecek kebenarannya, dilengkapi kuis untuk memperdalam pengetahuan dan komunitas
+              untuk saling berbagi pengalaman. Saya sebagai project manager, membantu pembuatan
+              beberapa tampilan, dan membuat dataset serta model untuk machine learning-nya.
             </p>
             <ul class="tags">
               <li>Flutter</li>
@@ -160,47 +163,45 @@
   <section class="section" id="about">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="section__title">About</h2>
-        <p class="section__meta">How I work</p>
+        <h2 class="section__title" data-i18n="about.title">Tentang</h2>
+        <p class="section__meta" data-i18n="about.meta">Cara saya bekerja</p>
       </div>
 
       <div class="about">
         <div>
-          <p>
-            I work mostly on the frontend: translating a design into Blade templates or Flutter
-            widgets, wiring the form states, and chasing the edge cases that only show up after the
-            happy path works. On the lab profile project I also took the controller and model work
-            that the pages needed.
+          <p data-i18n="about.p1">
+            Saya memiliki ketertarikan di bidang desain untuk platform website dan mobile. Untuk
+            saat ini saya sering mengerjakan bagian frontend atau tampilan aplikasi, namun terkadang
+            saya juga mengerjakan backend.
           </p>
-          <p>
-            With Sign.L I took on the project manager role alongside the frontend and the model.
-            That mostly meant splitting work by folder, keeping the architecture consistent, and
-            making sure the camera and inference flow held up on mid-range Android devices.
+          <p data-i18n="about.p2">
+            Untuk saat ini saya tengah mempelajari C++, Java, Flutter, Dart, Python, HTML, CSS, JS,
+            Laravel, dan PHP.
           </p>
-          <p>
-            I am looking for a frontend or full-stack internship where I can work inside an existing
-            codebase and get my code reviewed by people more experienced than me.
+          <p data-i18n="about.p3">
+            Untuk ketertarikan lainnya, saya tertarik dalam hal game development, fotografi,
+            videografi, dan jaringan komputer.
           </p>
 
           <div class="edu">
             <p class="edu__school">Politeknik Negeri Malang</p>
-            <p class="edu__meta">D4 Teknik Informatika · 2024 — 2028 (expected) · GPA 3.78 / 4.00</p>
+            <p class="edu__meta" data-i18n="edu.meta">D4 Teknik Informatika · 2024 - 2028 (perkiraan) · IPK 3.78 / 4.00</p>
           </div>
 
           <div class="certs">
-            <p class="certs__label">Certifications</p>
+            <p class="certs__label" data-i18n="certs.label">Sertifikasi</p>
             <ul>
-              <li>Building LLM Applications With Prompt Engineering — NVIDIA, 2025</li>
-              <li>Internet of Things: Fundamentals, Hardware, Software &amp; Platforms — Skilvul, 2023</li>
-              <li>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures (Gold) — Skilvul, 2023</li>
-              <li>Flutter for Beginners, Dart, Programming Logic 101 — Dicoding, 2023</li>
+              <li>Building LLM Applications With Prompt Engineering - NVIDIA, 2025</li>
+              <li>Internet of Things: Fundamentals, Hardware, Software &amp; Platforms - Skilvul, 2023</li>
+              <li>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures (Gold) - Skilvul, 2023</li>
+              <li>Flutter for Beginners, Dart, Programming Logic 101 - Dicoding, 2023</li>
             </ul>
           </div>
         </div>
 
         <dl class="skills">
           <div>
-            <dt>Languages</dt>
+            <dt data-i18n="skills.languages">Bahasa</dt>
             <dd>PHP, Dart, JavaScript, SQL</dd>
           </div>
           <div>
@@ -227,11 +228,9 @@
   <section class="section" id="contact">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="section__title">Contact</h2>
-        <p class="section__meta">Malang, East Java</p>
+        <h2 class="section__title" data-i18n="contact.title">Kontak</h2>
+        <p class="section__meta" data-i18n="contact.meta">Malang, Jawa Timur</p>
       </div>
-
-      <p class="contact__title">Looking for an intern who finishes what he starts? Let's talk.</p>
 
       <div class="contact-links">
         <a href="mailto:abdulghofuralmiqbadi2@gmail.com">
@@ -242,9 +241,9 @@
           <span class="label">GitHub</span>
           <span class="value">github.com/furalmiqbadi</span>
         </a>
-        <a href="cv/">
-          <span class="label">CV</span>
-          <span class="value">Web version + PDF</span>
+        <a href="https://www.linkedin.com/in/furalmiqbadi/">
+          <span class="label">LinkedIn</span>
+          <span class="value">linkedin.com/in/furalmiqbadi</span>
         </a>
       </div>
     </div>
@@ -255,7 +254,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
     <span>© 2026 Abdul Ghofur Almiqbadi</span>
-    <span>Static site · GitHub Pages</span>
+    <span data-i18n="footer.note">Situs statis · GitHub Pages</span>
   </div>
 </footer>
 
