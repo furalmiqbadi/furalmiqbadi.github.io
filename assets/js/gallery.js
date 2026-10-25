@@ -1,6 +1,7 @@
 // Photo viewer for project pages and the homepage showcase: thumbnails, click to switch, slow auto-advance.
 (function () {
   var AUTO_MS = 6000;
+  var PAGER_WINDOW = 3;
 
   // Reads the pipe-separated image list declared on the container.
   function readImages(node) {
@@ -44,6 +45,37 @@
     });
 
     if (media.complete && media.naturalWidth > 0) slot.hidden = true;
+  }
+
+  // Numbered pager: three numbers at a time, plus arrows for the next group.
+  function renderPager(pager, total, current, onPick) {
+    pager.innerHTML = '';
+    if (total < 2) return;
+
+    var start = Math.max(0, Math.min(current - 1, total - PAGER_WINDOW));
+    if (total <= PAGER_WINDOW) start = 0;
+    var end = Math.min(total, start + PAGER_WINDOW);
+
+    function makeButton(label, index, extra) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = label;
+      if (extra) button.className = extra;
+      if (index === null) {
+        button.disabled = true;
+      } else {
+        button.addEventListener('click', function () { onPick(index); });
+      }
+      pager.appendChild(button);
+    }
+
+    makeButton('‹', current === 0 ? null : current - 1, 'pager__arrow');
+
+    for (var i = start; i < end; i++) {
+      makeButton(String(i + 1), i, i === current ? 'is-active' : '');
+    }
+
+    makeButton('›', current === total - 1 ? null : current + 1, 'pager__arrow');
   }
 
   // Single project gallery: one large image plus a thumbnail strip.
@@ -113,10 +145,6 @@
       return readImages(items[project]);
     }
 
-    function media() {
-      return items[project].querySelector('[data-media]');
-    }
-
     function stop() {
       window.clearInterval(timer);
     }
@@ -130,10 +158,18 @@
       }, AUTO_MS);
     }
 
+    // Projects without photos keep the placeholder visible instead of a broken image.
     function paintPhoto() {
       var list = images();
-      var node = media();
-      if (!node || list.length === 0) return;
+      var node = items[project].querySelector('[data-media]');
+      var slot = items[project].querySelector('.media__slot');
+      if (!node) return;
+
+      if (list.length === 0) {
+        node.hidden = true;
+        if (slot) slot.hidden = false;
+        return;
+      }
 
       node.hidden = false;
       node.src = list[photo];
@@ -146,9 +182,6 @@
       items.forEach(function (item, i) {
         item.classList.toggle('is-active', i === project);
       });
-      Array.prototype.forEach.call(pager.children, function (button, i) {
-        button.classList.toggle('is-active', i === project);
-      });
 
       thumbs.innerHTML = '';
       images().forEach(function (src, i) {
@@ -159,18 +192,17 @@
         }));
       });
 
-      watchMedia(media(), items[project].querySelector('.media__slot'));
+      watchMedia(items[project].querySelector('[data-media]'), items[project].querySelector('.media__slot'));
+      renderPager(pager, items.length, project, function (next) {
+        project = Math.max(0, Math.min(items.length - 1, next));
+        photo = 0;
+        paintProject();
+      });
+
       photo = 0;
       paintPhoto();
       start();
     }
-
-    Array.prototype.forEach.call(pager.children, function (button, i) {
-      button.addEventListener('click', function () {
-        project = i;
-        paintProject();
-      });
-    });
 
     root.addEventListener('mouseenter', stop);
     root.addEventListener('mouseleave', start);
@@ -179,6 +211,29 @@
     paintProject();
   }
 
+  // Experience list: stacked cards split into pages of three.
+  function setupPaged(root) {
+    var pages = Array.prototype.slice.call(root.querySelectorAll('.paged__page'));
+    var pager = root.querySelector('[data-pager]');
+    if (pages.length === 0 || !pager) return;
+
+    var current = 0;
+
+    function paint() {
+      pages.forEach(function (page, i) {
+        page.classList.toggle('is-active', i === current);
+      });
+      renderPager(pager, pages.length, current, function (next) {
+        current = Math.max(0, Math.min(pages.length - 1, next));
+        paint();
+      });
+    }
+
+    root.classList.add('is-ready');
+    paint();
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-gallery]'), setupGallery);
   Array.prototype.forEach.call(document.querySelectorAll('[data-showcase]'), setupShowcase);
+  Array.prototype.forEach.call(document.querySelectorAll('[data-paged]'), setupPaged);
 })();

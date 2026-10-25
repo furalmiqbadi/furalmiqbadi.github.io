@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /cv/
 
-Sitemap: https://furalmiqbadi.github.io/sitemap.xml
+Sitemap: https://furalmiqbadi.my.id/sitemap.xml

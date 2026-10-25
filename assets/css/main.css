@@ -587,13 +587,29 @@ a {
   display: grid;
 }
 
-.showcase__kind {
-  margin: 0 0 8px;
+/* Project type and origin labels, kept short so the card stays scannable. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+}
+
+.chip {
+  padding: 4px 9px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.chip--soft {
+  border-color: var(--line);
+  background: var(--paper-soft);
+  color: var(--ink-3);
 }
 
 .showcase h3 {
@@ -630,14 +646,20 @@ a {
   color: var(--ink-2);
 }
 
+/* The result line is the strongest claim on the card, so it gets its own block. */
 .showcase__result {
   max-width: 46ch;
   margin: 0 0 18px;
-  padding-left: 12px;
-  border-left: 2px solid var(--accent);
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--paper-soft);
   font-size: 14px;
   line-height: 1.6;
   color: var(--ink);
+}
+
+.showcase__result strong {
+  color: var(--accent);
 }
 
 .showcase__links {
@@ -670,16 +692,16 @@ a {
   border-top: 1px solid var(--line);
 }
 
-.showcase__pager {
-  display: none;
+.pager {
+  display: flex;
   gap: 6px;
 }
 
-.showcase.is-ready .showcase__pager {
-  display: flex;
+.pager:empty {
+  display: none;
 }
 
-.showcase__pager button {
+.pager button {
   min-width: 30px;
   height: 30px;
   padding: 0 8px;
@@ -693,9 +715,27 @@ a {
   transition: border-color 0.16s ease, color 0.16s ease;
 }
 
-.showcase__pager button.is-active {
+.pager button.is-active {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.pager button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Experience list: three entries per tab, switched through the pager. */
+.paged.is-ready .paged__page {
+  display: none;
+}
+
+.paged.is-ready .paged__page.is-active {
+  display: block;
+}
+
+.paged .pager {
+  margin-top: 24px;
 }
 
 /* ---------- shared media frame and thumbnails ---------- */
