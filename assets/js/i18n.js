@@ -21,7 +21,6 @@
     'work.origin.pbl': 'Project-based learning',
     'work.origin.solo': 'Solo project',
     'work.detail': 'View detail',
-    'media.slot': 'Image slot - 1200x750',
     'work.1.title': 'Lab Profile MMT',
     'work.1.meta': 'Frontend designer · 6 people · Oct-Dec 2025',
     'work.1.desc': 'A campus laboratory profile site with an admin panel for the gallery, news, and project catalog.',

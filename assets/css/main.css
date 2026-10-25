@@ -569,23 +569,7 @@ a {
   text-underline-offset: 3px;
 }
 
-/* ---------- showcase (one project at a time) ---------- */
-
-.showcase {
-  border-top: 1px solid var(--line);
-}
-
-/* Only the active project is shown; the rest stay in the markup for the script. */
-.showcase__item {
-  display: none;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: clamp(20px, 3.4vw, 44px);
-  padding-block: clamp(24px, 3.4vw, 38px);
-}
-
-.showcase__item.is-active {
-  display: grid;
-}
+/* ---------- project list (three stacked, photo on the right) ---------- */
 
 /* Project type and origin labels, kept short so the card stays scannable. */
 .chips {
@@ -612,25 +596,55 @@ a {
   color: var(--ink-3);
 }
 
-.showcase h3 {
+.proj {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(180px, 22vw, 260px);
+  gap: clamp(18px, 3vw, 38px);
+  align-items: start;
+  padding-block: clamp(24px, 3vw, 34px);
+  border-top: 1px solid var(--line);
+}
+
+.proj:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.proj__shot {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--paper-soft);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.proj__shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.proj h3 {
   margin: 0 0 8px;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
-.showcase h3 a {
+.proj h3 a {
   text-decoration: none;
   transition: color 0.16s ease;
 }
 
-.showcase h3 a:hover {
+.proj h3 a:hover {
   color: var(--accent);
 }
 
-.showcase__meta {
-  margin: 0 0 14px;
+.proj__meta {
+  margin: 0 0 12px;
   font-family: var(--font-mono);
   font-size: 10.5px;
   letter-spacing: 0.08em;
@@ -638,18 +652,18 @@ a {
   color: var(--ink-3);
 }
 
-.showcase__desc {
-  max-width: 46ch;
-  margin: 0 0 14px;
+.proj__desc {
+  max-width: 56ch;
+  margin: 0 0 12px;
   font-size: 14.5px;
   line-height: 1.65;
   color: var(--ink-2);
 }
 
 /* The result line is the strongest claim on the card, so it gets its own block. */
-.showcase__result {
-  max-width: 46ch;
-  margin: 0 0 18px;
+.proj__result {
+  max-width: 56ch;
+  margin: 0 0 14px;
   padding: 12px 14px;
   border-left: 3px solid var(--accent);
   background: var(--paper-soft);
@@ -658,11 +672,11 @@ a {
   color: var(--ink);
 }
 
-.showcase__result strong {
+.proj__result strong {
   color: var(--accent);
 }
 
-.showcase__links {
+.proj__links {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
@@ -670,7 +684,7 @@ a {
   font-size: 13px;
 }
 
-.showcase__links a {
+.proj__links a {
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--line);
@@ -678,18 +692,8 @@ a {
   transition: border-color 0.16s ease;
 }
 
-.showcase__links a:hover {
+.proj__links a:hover {
   border-color: var(--ink);
-}
-
-.showcase__bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
 }
 
 .pager {
@@ -750,25 +754,12 @@ a {
   overflow: hidden;
 }
 
+/* Images keep their whole frame visible; the empty area stays as background. */
 .media__img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.media__slot {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 0 20px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  text-align: center;
+  object-fit: contain;
 }
 
 .thumbs {
@@ -802,16 +793,6 @@ a {
   object-fit: cover;
 }
 
-.thumb__num {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--ink-3);
-}
-
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
@@ -829,8 +810,8 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .showcase__item {
-    grid-template-columns: 1fr;
+  .proj {
+    grid-template-columns: minmax(0, 1fr) 200px;
   }
 }
 
@@ -856,6 +837,16 @@ a {
 
   .work__num {
     display: none;
+  }
+
+  /* On narrow screens the photo moves under the text and shrinks. */
+  .proj {
+    grid-template-columns: 1fr;
+  }
+
+  .proj__shot {
+    max-width: 260px;
+    order: -1;
   }
 }
 

@@ -18,7 +18,6 @@
     'h.topics': 'Topics',
     'h.relevance': 'Relevance',
     'h.tools': 'Tools',
-    'media.slot': 'Image slot - 1200x750',
     'next.label': 'Next'
   };
 
