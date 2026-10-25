@@ -3,25 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abdul Ghofur Almiqbadi — Mobile Developer (Flutter)</title>
-<meta name="description" content="Information systems student building local-first mobile apps with Flutter. Author of Arkustudio, a suite of five offline-first productivity apps.">
+<title>Abdul Ghofur Almiqbadi — Frontend Developer</title>
+<meta name="description" content="D4 Informatics student at Politeknik Negeri Malang. Frontend developer on three team projects built with PHP, Laravel, and Flutter.">
 <link rel="canonical" href="https://furalmiqbadi.github.io/">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Abdul Ghofur Almiqbadi — Mobile Developer">
-<meta property="og:description" content="Local-first mobile apps built with Flutter.">
+<meta property="og:title" content="Abdul Ghofur Almiqbadi — Frontend Developer">
+<meta property="og:description" content="Frontend developer building web and mobile products with PHP, Laravel, and Flutter.">
 <meta property="og:url" content="https://furalmiqbadi.github.io/">
-<meta property="og:image" content="https://furalmiqbadi.github.io/assets/img/notes.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Abdul Ghofur Almiqbadi",
-  "jobTitle": "Mobile Developer",
+  "jobTitle": "Frontend Developer",
   "url": "https://furalmiqbadi.github.io/",
+  "email": "abdulghofuralmiqbadi2@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Malang", "addressRegion": "East Java", "addressCountry": "ID" },
   "sameAs": ["https://github.com/furalmiqbadi"],
-  "knowsAbout": ["Flutter", "Dart", "Mobile Development", "Offline-first architecture"]
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Politeknik Negeri Malang" },
+  "knowsAbout": ["PHP", "Laravel", "Flutter", "Tailwind CSS", "TensorFlow Lite"]
 }
 </script>
 </head>
@@ -43,12 +45,12 @@
 
   <section class="wrap hero">
     <div>
-      <p class="eyebrow">Mobile developer · Flutter · Yogyakarta, ID</p>
-      <h1>I build <em>local-first</em> mobile apps that keep working without a connection.</h1>
+      <p class="eyebrow">Frontend developer · Malang, ID</p>
+      <h1>I turn other people's designs and APIs into pages that actually <em>work</em>.</h1>
       <p class="lead">
-        Information systems student and independent developer. I designed and shipped Arkustudio —
-        five Flutter apps (notes, tasks, money, habits, calendar) that share one offline-first core,
-        an encrypted vault, and a single design system.
+        D4 Informatics student at Politeknik Negeri Malang. I have shipped the frontend of three
+        team projects: a campus lab profile site in PHP, a race-photo marketplace in Laravel, and a
+        Flutter sign-language app where I also handle the on-device model and the team's planning.
       </p>
       <div class="actions">
         <a class="btn" href="cv/">Read my CV</a>
@@ -59,19 +61,19 @@
     <dl class="facts">
       <div>
         <dt>Focus</dt>
-        <dd>Flutter · Dart</dd>
+        <dd>Frontend · Web &amp; mobile</dd>
       </div>
       <div>
-        <dt>Shipped</dt>
-        <dd>5 apps, 1 core</dd>
+        <dt>Stack</dt>
+        <dd>PHP · Laravel · Flutter</dd>
       </div>
       <div>
-        <dt>Storage</dt>
-        <dd>SQLite + Drift</dd>
+        <dt>Team size</dt>
+        <dd>4–6 people</dd>
       </div>
       <div>
-        <dt>Status</dt>
-        <dd>Open for internship</dd>
+        <dt>GPA</dt>
+        <dd>3.78 / 4.00</dd>
       </div>
     </dl>
   </section>
@@ -80,7 +82,7 @@
     <div class="wrap">
       <div class="section__head">
         <h2 class="section__title">Selected work</h2>
-        <p class="section__meta">Arkustudio suite · 2026</p>
+        <p class="section__meta">Project-based learning · 2025–2026</p>
       </div>
 
       <div class="work-list">
@@ -88,98 +90,67 @@
         <article class="work">
           <span class="work__num">01</span>
           <div class="work__body">
-            <h3>Notes</h3>
+            <h3>Lab Profile Website</h3>
+            <p class="work__meta">Frontend, with backend contributions · 6 people · Oct–Dec 2025</p>
             <p>
-              Rich-text notes with checklists, labels, reminders and PIN-locked entries.
-              Locked notes are encrypted with AES-GCM using a key derived locally via PBKDF2 —
-              no plaintext ever leaves the device.
+              A public profile site for a campus laboratory: home, about, catalog, gallery, news,
+              lecturer profiles and student work pages, plus an admin area for managing all of it.
             </p>
             <ul class="tags">
-              <li>Flutter</li>
-              <li>Rich text</li>
-              <li>AES-GCM</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>MVC</li>
+              <li>HTML/CSS</li>
             </ul>
+            <p class="work__links">
+              <a href="https://github.com/furalmiqbadi/PBL-S3-LabProfile">Repository ↗</a>
+            </p>
           </div>
-          <figure class="work__shot">
-            <img src="assets/img/notes.jpg" alt="Notes home screen with grouped note list" width="360" height="800" loading="lazy" decoding="async">
-          </figure>
         </article>
 
         <article class="work">
           <span class="work__num">02</span>
           <div class="work__body">
-            <h3>Tasks</h3>
+            <h3>KeJepret — Race Photo Marketplace</h3>
+            <p class="work__meta">Frontend · 4 people · Feb–Jun 2026</p>
             <p>
-              Task capture with lists, starring and completion states. Tasks surface in the
-              calendar automatically, so there is one source of truth for what is due today.
+              A marketplace where runners find photos of themselves from a race through AI face
+              search, then buy the originals from the photographer. Frontend built in Blade and
+              Tailwind over Laravel, covering the runner search, cart, checkout and photographer
+              dashboard flows.
             </p>
             <ul class="tags">
-              <li>Flutter</li>
-              <li>State management</li>
-              <li>Offline sync</li>
+              <li>Laravel 12</li>
+              <li>Blade</li>
+              <li>Tailwind 4</li>
+              <li>Vite</li>
             </ul>
+            <p class="work__links">
+              <a href="https://github.com/furalmiqbadi/PBL-S4-KeJepret">Repository ↗</a>
+            </p>
           </div>
-          <figure class="work__shot">
-            <img src="assets/img/tasks.jpg" alt="Tasks screen with empty state" width="360" height="800" loading="lazy" decoding="async">
-          </figure>
         </article>
 
         <article class="work">
           <span class="work__num">03</span>
           <div class="work__body">
-            <h3>Money</h3>
+            <h3>Sign.L — Sign Language Learning App</h3>
+            <p class="work__meta">Project manager, frontend, machine learning · 5 people · Aug 2026 – present</p>
             <p>
-              Multi-account expense tracking with monthly budgets and category breakdowns.
-              Amounts are stored as integers in minor units, so totals never drift from
-              floating-point rounding.
-            </p>
-            <ul class="tags">
-              <li>Drift</li>
-              <li>Data modelling</li>
-              <li>Unit tests</li>
-            </ul>
-          </div>
-          <figure class="work__shot">
-            <img src="assets/img/money.jpg" alt="Money overview with balance, income and expenses" width="360" height="800" loading="lazy" decoding="async">
-          </figure>
-        </article>
-
-        <article class="work">
-          <span class="work__num">04</span>
-          <div class="work__body">
-            <h3>Habits</h3>
-            <p>
-              Daily habit tracking with streaks, weekly check-in strips and long-term statistics.
-              Completed days are recalculated from stored events rather than cached counters.
+              A mobile app for learning BISINDO with on-device gesture recognition and a gamified
+              learning path. I prepared the TFLite classifier for the 26 alphabet signs and the
+              camera preprocessing pipeline (crop, resize, normalize) that feeds it.
             </p>
             <ul class="tags">
               <li>Flutter</li>
-              <li>Statistics</li>
-              <li>Local DB</li>
+              <li>TensorFlow Lite</li>
+              <li>Provider</li>
+              <li>Camera</li>
             </ul>
-          </div>
-          <figure class="work__shot">
-            <img src="assets/img/habits.jpg" alt="Habits today screen with streak strip" width="360" height="800" loading="lazy" decoding="async">
-          </figure>
-        </article>
-
-        <article class="work">
-          <span class="work__num">05</span>
-          <div class="work__body">
-            <h3>Calendar</h3>
-            <p>
-              Agenda, week and month views that merge events, tasks and transactions into one
-              timeline. Date range queries are indexed so month view renders in a single pass.
+            <p class="work__links">
+              <a href="https://github.com/furalmiqbadi/PBL-S5-Sign.L">Repository ↗</a>
             </p>
-            <ul class="tags">
-              <li>Flutter</li>
-              <li>SQL indexes</li>
-              <li>Shared core</li>
-            </ul>
           </div>
-          <figure class="work__shot">
-            <img src="assets/img/calendar.jpg" alt="Calendar agenda screen with empty state" width="360" height="800" loading="lazy" decoding="async">
-          </figure>
         </article>
 
       </div>
@@ -196,42 +167,57 @@
       <div class="about">
         <div>
           <p>
-            I work on one problem: keeping a personal app fast and private when the network is not
-            there. Arkustudio is built as a monorepo — shared packages for design tokens, data
-            access and encryption, with each app as a thin feature layer on top.
+            I work mostly on the frontend: translating a design into Blade templates or Flutter
+            widgets, wiring the form states, and chasing the edge cases that only show up after the
+            happy path works. On the lab profile project I also took the controller and model work
+            that the pages needed.
           </p>
           <p>
-            I care about the boring parts: migration paths that do not lose rows, encryption keys
-            derived on a background isolate so the UI never blocks, and tests around money and
-            cryptography where a silent bug is expensive.
+            With Sign.L I took on the project manager role alongside the frontend and the model.
+            That mostly meant splitting work by folder, keeping the architecture consistent, and
+            making sure the camera and inference flow held up on mid-range Android devices.
           </p>
           <p>
-            Currently looking for a software engineering internship where I can work on mobile or
-            backend systems with people who review code seriously.
+            I am looking for a frontend or full-stack internship where I can work inside an existing
+            codebase and get my code reviewed by people more experienced than me.
           </p>
 
           <div class="edu">
-            <p class="edu__school">Universitas Nusantara</p>
-            <p class="edu__meta">Bachelor of Information Systems · 2023 — 2027 (expected) · GPA 3.72 / 4.00</p>
+            <p class="edu__school">Politeknik Negeri Malang</p>
+            <p class="edu__meta">D4 Teknik Informatika · 2024 — 2028 (expected) · GPA 3.78 / 4.00</p>
+          </div>
+
+          <div class="certs">
+            <p class="certs__label">Certifications</p>
+            <ul>
+              <li>Building LLM Applications With Prompt Engineering — NVIDIA, 2025</li>
+              <li>Internet of Things: Fundamentals, Hardware, Software &amp; Platforms — Skilvul, 2023</li>
+              <li>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures (Gold) — Skilvul, 2023</li>
+              <li>Flutter for Beginners, Dart, Programming Logic 101 — Dicoding, 2023</li>
+            </ul>
           </div>
         </div>
 
         <dl class="skills">
           <div>
             <dt>Languages</dt>
-            <dd>Dart, Kotlin, TypeScript, SQL</dd>
+            <dd>PHP, Dart, JavaScript, SQL</dd>
           </div>
           <div>
-            <dt>Mobile</dt>
-            <dd>Flutter, Material 3, adaptive layouts, local authentication</dd>
+            <dt>Frontend</dt>
+            <dd>Blade, Tailwind CSS 4, Vite, HTML/CSS, Flutter</dd>
           </div>
           <div>
-            <dt>Data</dt>
-            <dd>SQLite, Drift, Supabase, REST, schema migrations</dd>
+            <dt>Backend</dt>
+            <dd>Laravel 12, Filament 5, MySQL, REST API</dd>
+          </div>
+          <div>
+            <dt>Machine learning</dt>
+            <dd>TensorFlow Lite, on-device inference, LLM prompt engineering</dd>
           </div>
           <div>
             <dt>Tooling</dt>
-            <dd>Git, GitHub Actions, Android Studio, Figma</dd>
+            <dd>Git, GitHub, Composer, Android Studio, Figma</dd>
           </div>
         </dl>
       </div>
@@ -242,15 +228,15 @@
     <div class="wrap">
       <div class="section__head">
         <h2 class="section__title">Contact</h2>
-        <p class="section__meta">Replies within a day</p>
+        <p class="section__meta">Malang, East Java</p>
       </div>
 
-      <p class="contact__title">Looking for an intern who ships? Let's talk.</p>
+      <p class="contact__title">Looking for an intern who finishes what he starts? Let's talk.</p>
 
       <div class="contact-links">
-        <a href="mailto:furalmiqbadi@gmail.com">
+        <a href="mailto:abdulghofuralmiqbadi2@gmail.com">
           <span class="label">Email</span>
-          <span class="value">furalmiqbadi@gmail.com</span>
+          <span class="value">abdulghofuralmiqbadi2@gmail.com</span>
         </a>
         <a href="https://github.com/furalmiqbadi">
           <span class="label">GitHub</span>

@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CV — Abdul Ghofur Almiqbadi | Mobile Developer</title>
-<meta name="description" content="Curriculum vitae of Abdul Ghofur Almiqbadi, mobile developer (Flutter). Single-column, ATS-friendly format with PDF download.">
+<title>CV — Abdul Ghofur Almiqbadi | Frontend Developer</title>
+<meta name="description" content="Curriculum vitae of Abdul Ghofur Almiqbadi, frontend developer (PHP, Laravel, Flutter). Single-column, ATS-friendly format with PDF download.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/cv.css">
@@ -21,11 +21,11 @@
 
   <header class="cv-head">
     <h1>Abdul Ghofur Almiqbadi</h1>
-    <p class="role">Mobile Developer — Flutter / Dart</p>
+    <p class="role">Frontend Developer — Web &amp; Mobile</p>
     <p class="contact">
-      <span>Yogyakarta, Indonesia</span>
-      <span>+62 812-0000-0000</span>
-      <span>furalmiqbadi@gmail.com</span>
+      <span>Malang, Indonesia</span>
+      <span>+62 858-5215-4752</span>
+      <span>abdulghofuralmiqbadi2@gmail.com</span>
       <span>github.com/furalmiqbadi</span>
       <span>furalmiqbadi.github.io</span>
     </p>
@@ -34,21 +34,21 @@
   <section>
     <h2>Professional Summary</h2>
     <p class="summary">
-      Information Systems student (graduating 2027) who builds offline-first mobile applications with
-      Flutter and Dart. Authored Arkustudio, a five-app productivity suite sharing one encrypted local
-      data core. Practical experience in SQLite/Drift data modelling, AES-GCM encryption, and Material 3
-      interfaces. Seeking a software engineering internship in mobile or backend development.
+      D4 Informatics student at Politeknik Negeri Malang (GPA 3.78/4.00) and frontend developer on
+      three team projects: a PHP lab profile site, a Laravel photo marketplace, and a Flutter
+      sign-language app where I also lead the team and own the on-device model. Comfortable working
+      in an existing codebase and shipping on a fixed semester deadline.
     </p>
   </section>
 
   <section>
     <h2>Technical Skills</h2>
     <ul class="skills">
-      <li><strong>Languages:</strong> Dart, Kotlin, TypeScript, SQL</li>
-      <li><strong>Mobile:</strong> Flutter, Material 3, adaptive layouts, local authentication, Android</li>
-      <li><strong>Data:</strong> SQLite, Drift, Supabase, REST APIs, schema migration, query indexing</li>
-      <li><strong>Security:</strong> PBKDF2-HMAC-SHA256, AES-GCM, secure key storage, biometric unlock</li>
-      <li><strong>Tooling:</strong> Git, GitHub Actions, Android Studio, Figma, unit and widget testing</li>
+      <li><strong>Languages:</strong> PHP, Dart, JavaScript, SQL, HTML/CSS</li>
+      <li><strong>Frontend:</strong> Blade, Tailwind CSS 4, Vite, Flutter, Material 3, responsive layout</li>
+      <li><strong>Backend:</strong> Laravel 12, Filament 5, MySQL, REST API, Sanctum</li>
+      <li><strong>Machine learning:</strong> TensorFlow Lite, on-device inference, image preprocessing, prompt engineering</li>
+      <li><strong>Tooling:</strong> Git, GitHub, Composer, Android Studio, Figma, PHPUnit</li>
     </ul>
   </section>
 
@@ -57,44 +57,38 @@
 
     <div class="entry">
       <div>
-        <h3>Independent Developer — Arkustudio</h3>
-        <p class="sub">Personal product suite · Yogyakarta, Indonesia</p>
+        <h3>Sign.L — Sign Language Learning App</h3>
+        <p class="sub">Project Manager, Frontend, ML Engineer · Team of 5 · Flutter, TFLite</p>
       </div>
-      <span class="dates">Feb 2026 – Present</span>
+      <span class="dates">Aug 2026 – Present</span>
     </div>
     <ul>
-      <li>Designed and shipped five Flutter applications (notes, tasks, money, habits, calendar) on a shared monorepo core of design tokens, repositories, and services.</li>
-      <li>Implemented note encryption where a PIN-derived key (PBKDF2-HMAC-SHA256, 120k iterations) wraps a per-vault AES-GCM data key; derivation runs on a background isolate to keep the interface responsive.</li>
-      <li>Modelled a Drift/SQLite schema with versioned migrations and merged events across tasks, transactions, and calendar entries into one indexed timeline.</li>
-      <li>Wrote unit tests for money arithmetic and rich-text serialization, and kept <em>flutter analyze</em> clean before every build.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-
-    <div class="entry">
-      <div>
-        <h3>Arkustudio Notes — Encrypted rich-text notes</h3>
-        <p class="sub">Flutter, Drift, AES-GCM</p>
-      </div>
-      <span class="dates">2026</span>
-    </div>
-    <ul>
-      <li>Rich-text editor with checklists, text styles, labels, and reminders; autosave debounced at 500 ms.</li>
-      <li>Locked notes decrypt only after PIN or biometric unlock, with an automatic session lock after 60 seconds in background.</li>
+      <li>Lead a five-person team on a BISINDO learning app, splitting work by folder and enforcing a thin-controller/service-layer architecture so UI code never calls the model or network directly.</li>
+      <li>Built the learning-path, material, and camera screens in Flutter with Provider state management, and prepared the TFLite classifier for the 26 BISINDO alphabet signs plus the crop/resize/normalize pipeline feeding inference from the device camera.</li>
     </ul>
 
     <div class="entry">
       <div>
-        <h3>Arkustudio Money — Expense tracking and budgets</h3>
-        <p class="sub">Flutter, SQLite, Drift</p>
+        <h3>KeJepret — Race Photo Marketplace</h3>
+        <p class="sub">Frontend Developer · Team of 4 · Laravel 12, Blade, Tailwind CSS 4</p>
       </div>
-      <span class="dates">2026</span>
+      <span class="dates">Feb 2026 – Jun 2026</span>
     </div>
     <ul>
-      <li>Multi-account ledger storing amounts in minor units to avoid floating-point drift, plus monthly budgets and category breakdowns.</li>
-      <li>Shared design system and repository layer reused across all five apps, cutting new-feature work to the feature module only.</li>
+      <li>Built the frontend in Blade and Tailwind over Laravel 12 for the runner face-search, cart, checkout, and photographer dashboard flows, keeping views in sync with the Filament admin panel and an external FastAPI face-search service.</li>
+      <li>Connected watermarked photo previews, search results, and paid-download states to the Laravel controllers and API endpoints.</li>
+    </ul>
+
+    <div class="entry">
+      <div>
+        <h3>Lab Profile Website</h3>
+        <p class="sub">Frontend Developer, with backend contributions · Team of 6 · PHP, MySQL</p>
+      </div>
+      <span class="dates">Oct 2025 – Dec 2025</span>
+    </div>
+    <ul>
+      <li>Built the public site in PHP on a view/controller/model split: home, about, catalog, gallery, news, lecturer, and student-work pages.</li>
+      <li>Implemented the admin area for managing gallery, news, and catalog content, including the controllers and queries behind each screen.</li>
     </ul>
   </section>
 
@@ -103,19 +97,27 @@
 
     <div class="entry">
       <div>
-        <h3>Universitas Nusantara — Bachelor of Information Systems</h3>
-        <p class="sub">GPA 3.72 / 4.00 · Coursework: data structures, database systems, mobile programming, software engineering</p>
+        <h3>Politeknik Negeri Malang — D4 Teknik Informatika</h3>
+        <p class="sub">GPA 3.78 / 4.00 · Coursework: web programming, database systems, mobile programming, software engineering</p>
       </div>
-      <span class="dates">2023 – 2027 (expected)</span>
+      <span class="dates">2024 – 2028 (expected)</span>
     </div>
+  </section>
+
+  <section>
+    <h2>Certifications &amp; Training</h2>
+    <ul class="skills">
+      <li><strong>Building LLM Applications With Prompt Engineering</strong> — NVIDIA, Jan 2025</li>
+      <li><strong>Internet of Things: Fundamentals / Hardware / Software &amp; Platforms</strong> — Skilvul, Jun 2023</li>
+      <li><strong>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures with Python (Gold)</strong> — Skilvul, Mar 2023</li>
+      <li><strong>Flutter for Beginners, Dart, Programming Logic 101</strong> — Dicoding, Oct 2023</li>
+    </ul>
   </section>
 
   <section>
     <h2>Additional</h2>
     <ul class="skills">
       <li><strong>Languages:</strong> Indonesian (native), English (professional working proficiency)</li>
-      <li><strong>Certification:</strong> Flutter Application Development — Dicoding, 2025</li>
-      <li><strong>Availability:</strong> Full-time internship, on-site or hybrid, from January 2027</li>
     </ul>
   </section>
 
