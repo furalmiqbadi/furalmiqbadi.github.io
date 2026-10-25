@@ -596,6 +596,13 @@ a {
   color: var(--ink-3);
 }
 
+/* Marks a project that is still being built, so it reads differently from the finished ones. */
+.chip--progress {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--paper);
+}
+
 .proj {
   display: grid;
   grid-template-columns: minmax(0, 1fr) clamp(180px, 22vw, 260px);
@@ -608,6 +615,11 @@ a {
 .proj:first-child {
   border-top: 0;
   padding-top: 0;
+}
+
+/* Cards without a screenshot use the full width instead of an empty column. */
+.proj--wide {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .proj__shot {

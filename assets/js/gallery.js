@@ -1,7 +1,8 @@
-// Photo viewer for project pages: thumbnails, click to switch, slow auto-advance.
+// Photo viewer for project, experience, and certificate pages.
 (function () {
   var AUTO_MS = 6000;
   var PAGER_WINDOW = 3;
+  var EXTENSIONS = ['.jpg', '.png', '.jpeg', '.webp'];
 
   // Reads the pipe-separated image list declared on the container.
   function readImages(node) {
@@ -9,6 +10,44 @@
       .split('|')
       .map(function (path) { return path.trim(); })
       .filter(function (path) { return path !== ''; });
+  }
+
+  // Tests one candidate at a time so a missing file never reaches the page.
+  function probe(candidates, index, done) {
+    if (index >= candidates.length) {
+      done(null);
+      return;
+    }
+
+    var tester = new Image();
+    tester.onload = function () { done(candidates[index]); };
+    tester.onerror = function () { probe(candidates, index + 1, done); };
+    tester.src = candidates[index];
+  }
+
+  // Keeps only the declared photos that really exist, in their declared order.
+  function resolveImages(paths, done) {
+    var found = new Array(paths.length);
+    var pending = paths.length;
+
+    if (pending === 0) {
+      done([]);
+      return;
+    }
+
+    paths.forEach(function (path, position) {
+      var candidates = /\.(jpe?g|png|webp|gif)$/i.test(path)
+        ? [path]
+        : EXTENSIONS.map(function (ext) { return path + ext; });
+
+      probe(candidates, 0, function (hit) {
+        found[position] = hit;
+        pending--;
+        if (pending === 0) {
+          done(found.filter(function (item) { return item; }));
+        }
+      });
+    });
   }
 
   // Builds one clickable preview for the thumbnail strip.
@@ -25,13 +64,6 @@
     button.appendChild(img);
     button.addEventListener('click', function () { onPick(index); });
     return button;
-  }
-
-  // Hides a broken image so the frame keeps its plain background.
-  function watchMedia(media) {
-    if (!media || media.getAttribute('data-watched') === 'true') return;
-    media.setAttribute('data-watched', 'true');
-    media.addEventListener('error', function () { media.hidden = true; });
   }
 
   // Numbered pager: three numbers at a time, plus arrows for the next group.
@@ -68,13 +100,8 @@
     if (arrows) makeButton('›', current === total - 1 ? null : current + 1, 'pager__arrow');
   }
 
-  // Single project gallery: one large image plus a thumbnail strip.
-  function setupGallery(root) {
-    var media = root.querySelector('[data-media]');
-    var thumbs = root.querySelector('[data-thumbs]');
-    var images = readImages(root);
-    if (!media || !thumbs || images.length === 0) return;
-
+  // Wires one gallery: large frame, thumbnail strip, slow auto-advance.
+  function buildGallery(root, media, thumbs, images) {
     var index = 0;
     var timer = null;
 
@@ -108,8 +135,6 @@
       }));
     });
 
-    watchMedia(media);
-
     root.addEventListener('mouseenter', stop);
     root.addEventListener('mouseleave', start);
     root.addEventListener('focusin', stop);
@@ -117,6 +142,47 @@
 
     paint();
     start();
+  }
+
+  // Gallery containers hide themselves when none of their photos exist yet.
+  function setupGallery(root) {
+    var media = root.querySelector('[data-media]');
+    var thumbs = root.querySelector('[data-thumbs]');
+    var declared = readImages(root);
+
+    if (!media || !thumbs || declared.length === 0) {
+      root.hidden = true;
+      return;
+    }
+
+    resolveImages(declared, function (images) {
+      if (images.length === 0) {
+        root.hidden = true;
+        return;
+      }
+      buildGallery(root, media, thumbs, images);
+    });
+  }
+
+  // Homepage cards drop the photo frame when the screenshot file is missing.
+  function setupShots() {
+    Array.prototype.forEach.call(document.querySelectorAll('.proj__shot'), function (frame) {
+      var img = frame.querySelector('img');
+
+      function drop() {
+        if (!frame.parentNode) return;
+        frame.parentNode.classList.add('proj--wide');
+        frame.remove();
+      }
+
+      if (!img) {
+        drop();
+        return;
+      }
+
+      img.addEventListener('error', drop);
+      if (img.complete && img.naturalWidth === 0) drop();
+    });
   }
 
   // Stacked lists split into pages of three, switched through the numbered pager.
@@ -143,4 +209,5 @@
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-gallery]'), setupGallery);
   Array.prototype.forEach.call(document.querySelectorAll('[data-paged]'), setupPaged);
+  setupShots();
 })();
