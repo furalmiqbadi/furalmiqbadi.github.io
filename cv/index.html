@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CV — Abdul Ghofur Almiqbadi | Frontend Developer</title>
-<meta name="description" content="Curriculum vitae of Abdul Ghofur Almiqbadi, frontend developer (PHP, Laravel, Flutter). Single-column, ATS-friendly format with PDF download.">
+<title>CV - Abdul Ghofur Almiqbadi | Frontend Developer</title>
+<meta name="description" content="Curriculum vitae Abdul Ghofur Almiqbadi, frontend developer (PHP, Laravel, Flutter). Satu kolom, berbasis teks, ramah ATS.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/cv.css">
+<script src="../assets/js/cv-i18n.js" defer></script>
 </head>
 <body>
 
 <div class="cv-bar">
-  <a class="back" href="../">← Portfolio</a>
-  <p class="cv-bar__hint">Single column · text-based · ATS-friendly</p>
-  <a class="download" href="abdul-ghofur-almiqbadi-cv.pdf" download>Download PDF</a>
+  <div class="lang" role="group" aria-label="Pilih bahasa">
+    <button type="button" class="lang__btn is-active" data-lang="id" aria-pressed="true">ID</button>
+    <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+  <a class="download" id="cv-download" href="abdul-ghofur-almiqbadi-cv-id.pdf" download>Unduh PDF</a>
 </div>
 
 <main class="sheet">
 
   <header class="cv-head">
     <h1>Abdul Ghofur Almiqbadi</h1>
-    <p class="role">Frontend Developer — Web &amp; Mobile</p>
+    <p class="role">Frontend Developer - Web &amp; Mobile</p>
     <p class="contact">
       <span>Malang, Indonesia</span>
       <span>+62 858-5215-4752</span>
@@ -32,92 +35,92 @@
   </header>
 
   <section>
-    <h2>Professional Summary</h2>
-    <p class="summary">
-      D4 Informatics student at Politeknik Negeri Malang (GPA 3.78/4.00) and frontend developer on
-      three team projects: a PHP lab profile site, a Laravel photo marketplace, and a Flutter
-      sign-language app where I also lead the team and own the on-device model. Comfortable working
-      in an existing codebase and shipping on a fixed semester deadline.
+    <h2 data-i18n="summary.title">Ringkasan Profesional</h2>
+    <p class="summary" data-i18n="summary.body">
+      Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang (IPK 3.78/4.00) dan frontend developer
+      pada tiga proyek kelompok: situs profil laboratorium dengan PHP, marketplace foto lari dengan
+      Laravel, dan aplikasi bahasa isyarat dengan Flutter yang juga saya pimpin timnya dan pegang
+      model on-device.
     </p>
   </section>
 
   <section>
-    <h2>Technical Skills</h2>
+    <h2 data-i18n="skills.title">Keahlian Teknis</h2>
     <ul class="skills">
-      <li><strong>Languages:</strong> PHP, Dart, JavaScript, SQL, HTML/CSS</li>
-      <li><strong>Frontend:</strong> Blade, Tailwind CSS 4, Vite, Flutter, Material 3, responsive layout</li>
+      <li><strong data-i18n="skills.langs">Bahasa:</strong> PHP, Dart, JavaScript, SQL, HTML/CSS</li>
+      <li><strong>Frontend:</strong> Blade, Tailwind CSS 4, Vite, Flutter, Material 3, <span data-i18n="skills.responsive">layout responsif</span></li>
       <li><strong>Backend:</strong> Laravel 12, Filament 5, MySQL, REST API, Sanctum</li>
-      <li><strong>Machine learning:</strong> TensorFlow Lite, on-device inference, image preprocessing, prompt engineering</li>
-      <li><strong>Tooling:</strong> Git, GitHub, Composer, Android Studio, Figma, PHPUnit</li>
+      <li><strong>Machine learning:</strong> TensorFlow Lite, <span data-i18n="skills.inference">inferensi on-device</span>, <span data-i18n="skills.preprocessing">prapemrosesan gambar</span>, prompt engineering</li>
+      <li><strong data-i18n="skills.tools">Perkakas:</strong> Git, GitHub, Composer, Android Studio, Figma, PHPUnit</li>
     </ul>
   </section>
 
   <section>
-    <h2>Experience</h2>
+    <h2 data-i18n="exp.title">Pengalaman</h2>
 
     <div class="entry">
       <div>
-        <h3>Sign.L — Sign Language Learning App</h3>
-        <p class="sub">Project Manager, Frontend, ML Engineer · Team of 5 · Flutter, TFLite</p>
+        <h3 data-i18n="exp.1.title">Sign.L - Aplikasi Belajar Bahasa Isyarat</h3>
+        <p class="sub" data-i18n="exp.1.sub">Project Manager, Frontend, ML Engineer · 5 orang · Flutter, TFLite</p>
       </div>
-      <span class="dates">Aug 2026 – Present</span>
+      <span class="dates" data-i18n="exp.1.dates">Agu 2026 - Sekarang</span>
     </div>
     <ul>
-      <li>Lead a five-person team on a BISINDO learning app, splitting work by folder and enforcing a thin-controller/service-layer architecture so UI code never calls the model or network directly.</li>
-      <li>Built the learning-path, material, and camera screens in Flutter with Provider state management, and prepared the TFLite classifier for the 26 BISINDO alphabet signs plus the crop/resize/normalize pipeline feeding inference from the device camera.</li>
+      <li data-i18n="exp.1.b1">Memimpin tim lima orang pada aplikasi belajar BISINDO, membagi kerja per folder dan menetapkan arsitektur thin-controller/service-layer agar kode UI tidak memanggil model atau jaringan secara langsung.</li>
+      <li data-i18n="exp.1.b2">Membangun layar jalur belajar, materi, dan kamera di Flutter dengan state management Provider, serta menyiapkan classifier TFLite untuk 26 huruf BISINDO dan pipeline crop/resize/normalize yang memberi masukan ke inferensi dari kamera perangkat.</li>
     </ul>
 
     <div class="entry">
       <div>
-        <h3>KeJepret — Race Photo Marketplace</h3>
-        <p class="sub">Frontend Developer · Team of 4 · Laravel 12, Blade, Tailwind CSS 4</p>
+        <h3 data-i18n="exp.2.title">KeJepret - Marketplace Foto Lari</h3>
+        <p class="sub" data-i18n="exp.2.sub">Frontend Developer · 4 orang · Laravel 12, Blade, Tailwind CSS 4</p>
       </div>
-      <span class="dates">Feb 2026 – Jun 2026</span>
+      <span class="dates" data-i18n="exp.2.dates">Feb 2026 - Jun 2026</span>
     </div>
     <ul>
-      <li>Built the frontend in Blade and Tailwind over Laravel 12 for the runner face-search, cart, checkout, and photographer dashboard flows, keeping views in sync with the Filament admin panel and an external FastAPI face-search service.</li>
-      <li>Connected watermarked photo previews, search results, and paid-download states to the Laravel controllers and API endpoints.</li>
+      <li data-i18n="exp.2.b1">Membangun frontend dengan Blade dan Tailwind di atas Laravel 12 untuk alur pencarian wajah pelari, keranjang, checkout, dan dashboard fotografer, menjaga tampilan tetap sinkron dengan panel admin Filament dan layanan pencarian wajah FastAPI eksternal.</li>
+      <li data-i18n="exp.2.b2">Menghubungkan pratinjau foto berwatermark, hasil pencarian, dan status unduhan berbayar ke controller dan endpoint API Laravel.</li>
     </ul>
 
     <div class="entry">
       <div>
-        <h3>Lab Profile Website</h3>
-        <p class="sub">Frontend Developer, with backend contributions · Team of 6 · PHP, MySQL</p>
+        <h3 data-i18n="exp.3.title">Website Profil Laboratorium</h3>
+        <p class="sub" data-i18n="exp.3.sub">Frontend Developer, dengan kontribusi backend · 6 orang · PHP, MySQL</p>
       </div>
-      <span class="dates">Oct 2025 – Dec 2025</span>
+      <span class="dates" data-i18n="exp.3.dates">Okt 2025 - Des 2025</span>
     </div>
     <ul>
-      <li>Built the public site in PHP on a view/controller/model split: home, about, catalog, gallery, news, lecturer, and student-work pages.</li>
-      <li>Implemented the admin area for managing gallery, news, and catalog content, including the controllers and queries behind each screen.</li>
+      <li data-i18n="exp.3.b1">Membangun situs publik dengan PHP memakai pemisahan view/controller/model: halaman beranda, tentang, katalog, galeri, berita, dosen, dan karya mahasiswa.</li>
+      <li data-i18n="exp.3.b2">Menerapkan area admin untuk mengelola konten galeri, berita, dan katalog, termasuk controller dan query di balik tiap halaman.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Education</h2>
+    <h2 data-i18n="edu.title">Pendidikan</h2>
 
     <div class="entry">
       <div>
-        <h3>Politeknik Negeri Malang — D4 Teknik Informatika</h3>
-        <p class="sub">GPA 3.78 / 4.00 · Coursework: web programming, database systems, mobile programming, software engineering</p>
+        <h3 data-i18n="edu.school">Politeknik Negeri Malang - D4 Teknik Informatika</h3>
+        <p class="sub" data-i18n="edu.sub">IPK 3.78 / 4.00 · Mata kuliah: pemrograman web, sistem basis data, pemrograman mobile, rekayasa perangkat lunak</p>
       </div>
-      <span class="dates">2024 – 2028 (expected)</span>
+      <span class="dates" data-i18n="edu.dates">2024 - 2028 (perkiraan)</span>
     </div>
   </section>
 
   <section>
-    <h2>Certifications &amp; Training</h2>
+    <h2 data-i18n="cert.title">Sertifikasi &amp; Pelatihan</h2>
     <ul class="skills">
-      <li><strong>Building LLM Applications With Prompt Engineering</strong> — NVIDIA, Jan 2025</li>
-      <li><strong>Internet of Things: Fundamentals / Hardware / Software &amp; Platforms</strong> — Skilvul, Jun 2023</li>
-      <li><strong>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures with Python (Gold)</strong> — Skilvul, Mar 2023</li>
-      <li><strong>Flutter for Beginners, Dart, Programming Logic 101</strong> — Dicoding, Oct 2023</li>
+      <li><strong>Building LLM Applications With Prompt Engineering</strong> - NVIDIA, <span data-i18n="cert.1.date">Jan 2025</span></li>
+      <li><strong>Internet of Things: Fundamentals / Hardware / Software &amp; Platforms</strong> - Skilvul, <span data-i18n="cert.2.date">Jun 2023</span></li>
+      <li><strong>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures with Python (Gold)</strong> - Skilvul, <span data-i18n="cert.3.date">Mar 2023</span></li>
+      <li><strong>Flutter for Beginners, Dart, Programming Logic 101</strong> - Dicoding, <span data-i18n="cert.4.date">Okt 2023</span></li>
     </ul>
   </section>
 
   <section>
-    <h2>Additional</h2>
+    <h2 data-i18n="add.title">Tambahan</h2>
     <ul class="skills">
-      <li><strong>Languages:</strong> Indonesian (native), English (professional working proficiency)</li>
+      <li><strong data-i18n="add.langs">Bahasa:</strong> <span data-i18n="add.langs.value">Indonesia (asli), Inggris (profesional)</span></li>
     </ul>
   </section>
 

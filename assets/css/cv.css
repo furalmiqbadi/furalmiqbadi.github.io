@@ -45,24 +45,43 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px clamp(16px, 4vw, 32px);
+  padding: 10px clamp(16px, 4vw, 32px);
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
 
-.cv-bar a {
-  font-size: 12.5px;
-  text-decoration: none;
+.lang {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
-.cv-bar .back {
-  color: var(--ink-2);
+.lang__btn {
+  padding: 7px 11px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+  font-family: var(--font);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease;
 }
 
-.cv-bar .back:hover {
+.lang__btn + .lang__btn {
+  border-left: 1px solid var(--line);
+}
+
+.lang__btn:hover {
   color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+}
+
+.lang__btn.is-active {
+  background: var(--ink);
+  color: #fff;
 }
 
 .cv-bar .download {
@@ -73,17 +92,13 @@ a {
   color: #fff;
   font-size: 12px;
   letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.16s ease, color 0.16s ease;
 }
 
 .cv-bar .download:hover {
   background: transparent;
   color: var(--ink);
-}
-
-.cv-bar__hint {
-  margin: 0;
-  font-size: 11.5px;
-  color: var(--ink-3);
 }
 
 /* ---------- sheet ---------- */
@@ -213,10 +228,6 @@ li::marker {
 /* ---------- responsive ---------- */
 
 @media (max-width: 620px) {
-  .cv-bar__hint {
-    display: none;
-  }
-
   .sheet {
     margin: 0;
     border-left: 0;
