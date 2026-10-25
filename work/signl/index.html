@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/work.css">
 <script src="/assets/js/page-i18n.js" defer></script>
+<script src="/assets/js/gallery.js" defer></script>
 </head>
 <body data-page="signl">
 
@@ -37,9 +38,13 @@
   <h1 class="page__title" data-i18n="p.title">Sign.L</h1>
   <p class="page__meta" data-i18n="p.meta">Project manager, frontend, machine learning · 5 orang · Agu 2026-sekarang</p>
 
-  <figure class="shot">
-    <span class="shot__note" data-i18n="p.shot">Slot tangkapan layar - 1200x750</span>
-  </figure>
+  <div class="gallery" data-gallery data-images="/assets/img/signl-01.jpg|/assets/img/signl-02.jpg|/assets/img/signl-03.jpg">
+    <figure class="media-frame gallery__main">
+      <img class="media__img" src="/assets/img/signl-01.jpg" alt="Tangkapan layar layar kamera aplikasi Sign.L" data-media>
+      <span class="media__slot" data-i18n="media.slot">Slot gambar 1200x750</span>
+    </figure>
+    <div class="thumbs" data-thumbs></div>
+  </div>
 
   <div class="prose">
     <h2 data-i18n="h.problem">Masalah</h2>

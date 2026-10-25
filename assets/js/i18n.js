@@ -19,6 +19,7 @@
     'work.meta': '3 team projects',
     'work.repo': 'Repository',
     'work.detail': 'View detail',
+    'media.slot': 'Image slot - 1200x750',
     'work.1.title': 'Lab Profile MMT',
     'work.1.meta': 'Frontend designer · 6 people · Oct-Dec 2025',
     'work.1.desc': 'A campus laboratory profile site with an admin panel for the gallery, news, and project catalog.',
@@ -49,7 +50,7 @@
     'exp.2.desc': 'Videotron, camera, and livestream operator for pesantren events: graduation, Festival Ilmiah Santri, and Manasik Haji.',
     'exp.3.role': 'Research, Talent & Interests Staff',
     'exp.3.meta': 'Mar 2025 - Feb 2026 · 1 yr',
-    'exp.3.desc': 'Chair of Musyawarah Kerja 2025, plus nine other committees across media, logistics, public relations, and esports livestream.',
+    'exp.3.desc': 'Chair of Musyawarah Kerja 2025, plus ten other committees across media, logistics, public relations, and esports livestream.',
     'exp.4.role': 'Social Media Admin',
     'exp.4.meta': 'Nov 2023 - Jul 2024 · 9 mo · Remote',
     'exp.4.desc': 'Ran Instagram and Facebook for the Mobile Legends news division: research, editing, daily publishing, and comment moderation.',
@@ -68,6 +69,10 @@
 
     'certs.label': 'Certifications',
     'certs.more': 'See all certifications',
+    'certs.1': 'Building LLM Applications With Prompt Engineering - NVIDIA, 2025',
+    'certs.2': 'Internet of Things: Fundamentals, Hardware, Software & Platforms - Skilvul, 2023',
+    'certs.3': 'Python Dasar, Python Lanjutan, Algorithm & Data Structures (Gold) - Skilvul, 2023',
+    'certs.4': 'Flutter for Beginners, Dart, Programming Logic 101 - Dicoding, 2023',
 
     'skills.languages': 'Languages',
     'skills.ml': 'Machine learning',
