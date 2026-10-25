@@ -285,6 +285,7 @@ a {
 /* ---------- work ---------- */
 
 .work {
+  position: relative;
   display: grid;
   grid-template-columns: 52px minmax(0, 1fr);
   gap: clamp(16px, 3vw, 40px);
@@ -312,12 +313,37 @@ a {
   letter-spacing: -0.015em;
 }
 
+/* Stretches the detail link over the whole card so anywhere is clickable. */
+.work__detail {
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+
+.work__detail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.work:hover .work__detail {
+  color: var(--accent);
+}
+
 .work p {
   max-width: 60ch;
   margin: 0 0 16px;
   font-size: 14.5px;
   line-height: 1.65;
   color: var(--ink-2);
+}
+
+.work p.work__kind {
+  margin: 0 0 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .work p.work__meta {
@@ -329,7 +355,21 @@ a {
   color: var(--ink-3);
 }
 
+.work p.work__result {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.work p.work__result strong {
+  font-weight: 600;
+}
+
 .work p.work__links {
+  position: relative;
+  z-index: 1;
   margin: 16px 0 0;
   font-size: 13px;
 }
@@ -425,6 +465,12 @@ a {
   color: var(--ink-3);
 }
 
+.edu__meta--second {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
 .certs {
   margin-top: 24px;
   padding-top: 18px;
@@ -451,6 +497,32 @@ a {
   font-size: 13.5px;
   line-height: 1.55;
   color: var(--ink-2);
+}
+
+.certs li a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.16s ease;
+}
+
+.certs li a:hover {
+  border-color: var(--ink);
+}
+
+.certs__more {
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.certs__more a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.16s ease;
+}
+
+.certs__more a:hover {
+  border-color: var(--accent);
 }
 
 /* ---------- contact ---------- */

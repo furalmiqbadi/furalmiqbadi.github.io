@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codename Tree - Abdul Ghofur Almiqbadi</title>
+<meta name="description" content="Lima aplikasi Flutter dalam satu monorepo dengan paket inti bersama, catatan terenkripsi, dan satu sumber tema.">
+<link rel="canonical" href="https://furalmiqbadi.github.io/work/codename-tree/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/work.css">
+<script src="/assets/js/page-i18n.js" defer></script>
+</head>
+<body data-page="codename-tree">
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/">Abdul Ghofur Almiqbadi</a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="/#work" data-i18n="nav.work">Proyek</a>
+      <a href="/#experience" data-i18n="nav.experience">Pengalaman</a>
+      <a href="/#about" data-i18n="nav.about">Tentang</a>
+      <a href="/#contact" data-i18n="nav.contact">Kontak</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Pilih bahasa">
+      <button type="button" class="lang__btn is-active" data-lang="id" aria-pressed="true">ID</button>
+      <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+
+  <a class="back" href="/#self" data-i18n="p.back">← Kembali ke portofolio</a>
+
+  <p class="page__kind" data-i18n="p.kind">Mobile</p>
+  <h1 class="page__title" data-i18n="p.title">Codename Tree</h1>
+  <p class="page__meta" data-i18n="p.meta">Solo · Ongoing</p>
+
+  <figure class="shot">
+    <span class="shot__note" data-i18n="p.shot">Slot tangkapan layar - 1200x750</span>
+  </figure>
+
+  <div class="prose">
+    <h2 data-i18n="h.problem">Masalah</h2>
+    <p data-i18n="p.problem">Catatan, tugas, keuangan, kebiasaan, dan jadwal biasanya tersebar di lima aplikasi berbeda, dengan tampilan dan cara kerja yang tidak saling cocok. Menggabungkannya jadi satu aplikasi besar membuat tiap bagian jadi berat dan sulit dirawat.</p>
+
+    <h2 data-i18n="h.role">Peran saya</h2>
+    <p data-i18n="p.role">Solo. Arsitektur, UI, data, keamanan, dan build.</p>
+
+    <h2 data-i18n="h.built">Yang saya bangun</h2>
+    <p data-i18n="p.built">Lima aplikasi Flutter terpisah dalam satu monorepo, berbagi paket inti: <code>arku_core</code> (tema, token, widget dasar), <code>arku_data</code> (skema Drift/SQLite dan repository), <code>arku_sync</code>, <code>arku_premium</code>, dan <code>arku_media</code>. Catatan terkunci dienkripsi AES-256-GCM dengan kunci turunan PIN lewat PBKDF2 120.000 iterasi, sehingga isi database tidak terbaca tanpa PIN.</p>
+
+    <h2 data-i18n="h.result">Hasil</h2>
+    <p class="result" data-i18n="p.result">Kelima aplikasi memakai satu sumber tema dan satu pola akses data, sehingga perubahan di paket inti berlaku ke semuanya sekaligus. Isi catatan terkunci tetap tidak terbaca meski file database diambil langsung.</p>
+
+    <h2 data-i18n="h.status">Status</h2>
+    <p data-i18n="p.status">Proyek masih berjalan. Kelima aplikasi, paket inti, dan enkripsi catatan sudah ada di repo. Sinkronisasi Drive, premium, dan lampiran foto masih dalam pengerjaan.</p>
+
+    <h2 data-i18n="p.tech">Teknologi</h2>
+    <ul class="tech">
+      <li>Flutter</li>
+      <li>Dart</li>
+      <li>Drift / SQLite</li>
+      <li>AES-256-GCM</li>
+      <li>PBKDF2</li>
+      <li>Provider</li>
+      <li>Google Drive API</li>
+      <li>Play Billing</li>
+    </ul>
+  </div>
+
+  <div class="page-links">
+    <span class="is-off" aria-disabled="true" data-i18n="p.repo">Repository</span>
+    <span class="is-off" aria-disabled="true" data-i18n="p.demo">Demo belum tersedia</span>
+  </div>
+
+  <nav class="next" aria-label="Proyek berikutnya">
+    <span data-i18n="next.label">Proyek berikutnya</span>
+    <a href="/work/lab-profile/" data-i18n="next.link">Lab Profile MMT</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span>© 2026 Abdul Ghofur Almiqbadi</span>
+    <a href="/">Portfolio</a>
+  </div>
+</footer>
+
+</body>
+</html>
