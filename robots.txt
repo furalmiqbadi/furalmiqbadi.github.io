@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /cv/
+Disallow: /admin/
 
 Sitemap: https://furalmiqbadi.my.id/sitemap.xml

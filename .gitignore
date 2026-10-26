@@ -1,0 +1,21 @@
+# Local admin tooling
+admin/.token
+admin/node_modules/
+node_modules/
+admin/
+
+# Private drafts (lamaran, catatan pribadi)
+doc/
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Never commit secrets
+.env
+.env.*
+*.pem
+*.key

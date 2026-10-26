@@ -8,23 +8,27 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/cv.css">
+<script src="../assets/js/dict-cv.js" defer></script>
 <script src="../assets/js/cv-i18n.js" defer></script>
+<script src="../assets/js/cv-fit.js" defer></script>
+
 </head>
 <body>
 
 <div class="cv-bar">
   <div class="lang" role="group" aria-label="Pilih bahasa">
-    <button type="button" class="lang__btn is-active" data-lang="id" aria-pressed="true">ID</button>
-    <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
-  </div>
-  <a class="download" id="cv-download" href="abdul-ghofur-almiqbadi-cv-id.pdf" download>Unduh PDF</a>
+      <button type="button" class="lang__btn is-active" data-lang="id" aria-pressed="true">ID</button>
+      <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  <a class="download" id="cv-download" href="abdul-ghofur-almiqbadi-cv-id.pdf" download data-i18n="cv.download">Unduh PDF</a>
 </div>
 
-<main class="sheet">
+<main class="stage">
+<article class="sheet">
 
   <header class="cv-head">
     <h1>Abdul Ghofur Almiqbadi</h1>
-    <p class="role">Frontend Developer - Web &amp; Mobile</p>
+    <p class="role" data-i18n="cv.role">Frontend Developer - Web &amp; Mobile</p>
     <p class="contact">
       <span>Malang, Indonesia</span>
       <span>+62 858-5215-4752</span>
@@ -35,95 +39,92 @@
   </header>
 
   <section>
-    <h2 data-i18n="summary.title">Ringkasan Profesional</h2>
-    <p class="summary" data-i18n="summary.body">
-      Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang (IPK 3.78/4.00) dan frontend developer
-      pada tiga proyek kelompok: situs profil laboratorium dengan PHP, marketplace foto lari dengan
-      Laravel, dan aplikasi bahasa isyarat dengan Flutter yang juga saya pimpin timnya dan pegang
-      model on-device.
-    </p>
+    <h2 data-i18n="cv.h.summary">Ringkasan Profesional</h2>
+    <p class="summary" data-i18n="cv.summary">Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang (IPK 3.78/4.00) dan frontend developer pada tiga proyek kelompok: situs profil laboratorium dengan PHP, marketplace foto lari dengan Laravel, dan aplikasi bahasa isyarat dengan Flutter yang juga saya pimpin timnya dan pegang model on-device.</p>
   </section>
 
   <section>
-    <h2 data-i18n="skills.title">Keahlian Teknis</h2>
+    <h2 data-i18n="cv.h.skills">Keahlian Teknis</h2>
     <ul class="skills">
-      <li><strong data-i18n="skills.langs">Bahasa pemrograman:</strong> PHP, Dart, JavaScript, SQL, HTML/CSS</li>
-      <li><strong>Frontend:</strong> Blade, Tailwind CSS 4, Vite, Flutter, Material 3, <span data-i18n="skills.responsive">layout responsif</span></li>
-      <li><strong>Backend:</strong> Laravel 12, Filament 5, MySQL, REST API, Sanctum</li>
-      <li><strong>Machine learning:</strong> TensorFlow Lite, <span data-i18n="skills.inference">inferensi on-device</span>, <span data-i18n="skills.preprocessing">prapemrosesan gambar</span>, prompt engineering</li>
-      <li><strong data-i18n="skills.tools">Perkakas:</strong> Git, GitHub, Composer, Android Studio, Figma, PHPUnit</li>
+      <li><strong data-i18n="cv.skill.0.label">Bahasa pemrograman:</strong> <span data-i18n="cv.skill.0.value">PHP, Dart, JavaScript, SQL, HTML/CSS</span></li>
+      <li><strong data-i18n="cv.skill.1.label">Frontend:</strong> <span data-i18n="cv.skill.1.value">Blade, Tailwind CSS 4, Vite, Flutter, Material 3, layout responsif</span></li>
+      <li><strong data-i18n="cv.skill.2.label">Backend:</strong> <span data-i18n="cv.skill.2.value">Laravel 12, Filament 5, MySQL, REST API, Sanctum</span></li>
+      <li><strong data-i18n="cv.skill.3.label">Machine learning:</strong> <span data-i18n="cv.skill.3.value">TensorFlow Lite, inferensi on-device, prapemrosesan gambar, prompt engineering</span></li>
+      <li><strong data-i18n="cv.skill.4.label">Tools:</strong> <span data-i18n="cv.skill.4.value">Git, GitHub, Composer, Android Studio, Figma, PHPUnit</span></li>
     </ul>
   </section>
 
   <section>
-    <h2 data-i18n="exp.title">Pengalaman</h2>
+    <h2 data-i18n="cv.h.experience">Pengalaman</h2>
 
     <div class="entry">
       <div>
-        <h3 data-i18n="exp.1.title">Sign.L - Aplikasi Belajar Bahasa Isyarat</h3>
-        <p class="sub" data-i18n="exp.1.sub">Project Manager, Frontend, ML Engineer · 5 orang · Flutter, TFLite</p>
+        <h3 data-i18n="cv.exp.0.title">Sign.L - Aplikasi Belajar Bahasa Isyarat</h3>
+        <p class="sub" data-i18n="cv.exp.0.sub">Project Manager, Frontend, ML Engineer · 5 orang · Flutter, TFLite</p>
       </div>
-      <span class="dates" data-i18n="exp.1.dates">Agu 2026 - Sekarang</span>
+      <span class="dates" data-i18n="cv.exp.0.dates">Agu 2026 - Sekarang</span>
     </div>
     <ul>
-      <li data-i18n="exp.1.b1">Memimpin tim lima orang pada aplikasi belajar BISINDO, membagi kerja per folder dan menetapkan arsitektur thin-controller/service-layer agar kode UI tidak memanggil model atau jaringan secara langsung.</li>
-      <li data-i18n="exp.1.b2">Membangun layar jalur belajar, materi, dan kamera di Flutter dengan state management Provider, serta menyiapkan classifier TFLite untuk 26 huruf BISINDO dan pipeline crop/resize/normalize yang memberi masukan ke inferensi dari kamera perangkat.</li>
+      <li data-i18n="cv.exp.0.b0">Memimpin tim lima orang pada aplikasi belajar BISINDO, membagi kerja per folder dan menetapkan arsitektur thin-controller/service-layer agar kode UI tidak memanggil model atau jaringan secara langsung.</li>
+      <li data-i18n="cv.exp.0.b1">Membangun layar jalur belajar, materi, dan kamera di Flutter dengan state management Provider, serta menyiapkan classifier TFLite untuk 26 huruf BISINDO dan pipeline crop/resize/normalize yang memberi masukan ke inferensi dari kamera perangkat.</li>
     </ul>
 
     <div class="entry">
       <div>
-        <h3 data-i18n="exp.2.title">KeJepret - Marketplace Foto Lari</h3>
-        <p class="sub" data-i18n="exp.2.sub">Frontend Developer · 4 orang · Laravel 12, Blade, Tailwind CSS 4</p>
+        <h3 data-i18n="cv.exp.1.title">KeJepret - Marketplace Foto Lari</h3>
+        <p class="sub" data-i18n="cv.exp.1.sub">Frontend Developer · 4 orang · Laravel 12, Blade, Tailwind CSS 4</p>
       </div>
-      <span class="dates" data-i18n="exp.2.dates">Feb 2026 - Jun 2026</span>
+      <span class="dates" data-i18n="cv.exp.1.dates">Feb 2026 - Jun 2026</span>
     </div>
     <ul>
-      <li data-i18n="exp.2.b1">Membangun frontend dengan Blade dan Tailwind di atas Laravel 12 untuk alur pencarian wajah pelari, keranjang, checkout, dan dashboard fotografer, menjaga tampilan tetap sinkron dengan panel admin Filament dan layanan pencarian wajah FastAPI eksternal.</li>
-      <li data-i18n="exp.2.b2">Menghubungkan pratinjau foto berwatermark, hasil pencarian, dan status unduhan berbayar ke controller dan endpoint API Laravel.</li>
+      <li data-i18n="cv.exp.1.b0">Membangun frontend dengan Blade dan Tailwind di atas Laravel 12 untuk alur pencarian wajah pelari, keranjang, checkout, dan dashboard fotografer, menjaga tampilan tetap sinkron dengan panel admin Filament dan layanan pencarian wajah FastAPI eksternal.</li>
+      <li data-i18n="cv.exp.1.b1">Menghubungkan pratinjau foto berwatermark, hasil pencarian, dan status unduhan berbayar ke controller dan endpoint API Laravel.</li>
     </ul>
 
     <div class="entry">
       <div>
-        <h3 data-i18n="exp.3.title">Website Profil Laboratorium</h3>
-        <p class="sub" data-i18n="exp.3.sub">Frontend Developer, dengan kontribusi backend · 6 orang · PHP, MySQL</p>
+        <h3 data-i18n="cv.exp.2.title">Website Profil Laboratorium</h3>
+        <p class="sub" data-i18n="cv.exp.2.sub">Frontend Developer, dengan kontribusi backend · 6 orang · PHP, MySQL</p>
       </div>
-      <span class="dates" data-i18n="exp.3.dates">Okt 2025 - Des 2025</span>
+      <span class="dates" data-i18n="cv.exp.2.dates">Okt 2025 - Des 2025</span>
     </div>
     <ul>
-      <li data-i18n="exp.3.b1">Membangun situs publik dengan PHP memakai pemisahan view/controller/model: halaman beranda, tentang, katalog, galeri, berita, dosen, dan karya mahasiswa.</li>
-      <li data-i18n="exp.3.b2">Menerapkan area admin untuk mengelola konten galeri, berita, dan katalog, termasuk controller dan query di balik tiap halaman.</li>
+      <li data-i18n="cv.exp.2.b0">Membangun situs publik dengan PHP memakai pemisahan view/controller/model: halaman beranda, tentang, katalog, galeri, berita, dosen, dan karya mahasiswa.</li>
+      <li data-i18n="cv.exp.2.b1">Menerapkan area admin untuk mengelola konten galeri, berita, dan katalog, termasuk controller dan query di balik tiap halaman.</li>
     </ul>
   </section>
 
   <section>
-    <h2 data-i18n="edu.title">Pendidikan</h2>
+    <h2 data-i18n="cv.h.education">Pendidikan</h2>
 
     <div class="entry">
       <div>
-        <h3 data-i18n="edu.school">Politeknik Negeri Malang - D4 Teknik Informatika</h3>
-        <p class="sub" data-i18n="edu.sub">IPK 3.78 / 4.00 · Mata kuliah: pemrograman web, sistem basis data, pemrograman mobile, rekayasa perangkat lunak</p>
+        <h3 data-i18n="cv.edu.school">Politeknik Negeri Malang - D4 Teknik Informatika</h3>
+        <p class="sub" data-i18n="cv.edu.sub">IPK 3.78 / 4.00 · Mata kuliah: pemrograman web, sistem basis data, pemrograman mobile, rekayasa perangkat lunak</p>
       </div>
-      <span class="dates" data-i18n="edu.dates">2024 - Sekarang</span>
+      <span class="dates" data-i18n="cv.edu.dates">2024 - Sekarang</span>
     </div>
   </section>
 
   <section>
-    <h2 data-i18n="cert.title">Sertifikasi &amp; Pelatihan</h2>
+    <h2 data-i18n="cv.h.certifications">Sertifikasi &amp; Pelatihan</h2>
     <ul class="skills">
-      <li><strong>Building LLM Applications With Prompt Engineering</strong> - NVIDIA, <span data-i18n="cert.1.date">Jan 2025</span></li>
-      <li><strong>Internet of Things: Fundamentals / Hardware / Software &amp; Platforms</strong> - Skilvul, <span data-i18n="cert.2.date">Jun 2023</span></li>
-      <li><strong>Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures with Python (Gold)</strong> - Skilvul, <span data-i18n="cert.3.date">Mar 2023</span></li>
-      <li><strong>Flutter for Beginners, Dart, Programming Logic 101</strong> - Dicoding, <span data-i18n="cert.4.date">Okt 2023</span></li>
+      <li><strong data-i18n="cv.cert.0.name">Building LLM Applications With Prompt Engineering - NVIDIA</strong> - <span data-i18n="cv.cert.0.date">Jan 2025</span></li>
+      <li><strong data-i18n="cv.cert.1.name">Internet of Things: Fundamentals / Hardware / Software &amp; Platforms - Skilvul</strong> - <span data-i18n="cv.cert.1.date">Jun 2023</span></li>
+      <li><strong data-i18n="cv.cert.2.name">Python Dasar, Python Lanjutan, Algorithm &amp; Data Structures with Python (Gold) - Skilvul</strong> - <span data-i18n="cv.cert.2.date">Mar 2023</span></li>
+      <li><strong data-i18n="cv.cert.3.name">Flutter for Beginners, Dart, Programming Logic 101 - Dicoding</strong> - <span data-i18n="cv.cert.3.date">Okt 2023</span></li>
     </ul>
   </section>
 
   <section>
-    <h2 data-i18n="add.title">Tambahan</h2>
+    <h2 data-i18n="cv.h.additional">Tambahan</h2>
     <ul class="skills">
-      <li><strong data-i18n="add.langs">Bahasa:</strong> <span data-i18n="add.langs.value">Indonesia (asli), Inggris (profesional)</span></li>
+      <li><strong data-i18n="cv.add.0.label">Soft skills:</strong> <span data-i18n="cv.add.0.value">Cepat adaptasi dengan stack baru, koordinasi tim lintas peran, manajemen waktu multi-proyek, komunikasi tertulis</span></li>
+      <li><strong data-i18n="cv.add.1.label">Bahasa:</strong> <span data-i18n="cv.add.1.value">Indonesia (asli), Inggris (profesional)</span></li>
     </ul>
   </section>
 
+</article>
 </main>
 
 </body>
