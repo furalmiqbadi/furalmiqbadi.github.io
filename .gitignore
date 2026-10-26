@@ -13,6 +13,7 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+git-error-*
 
 # Never commit secrets
 .env
