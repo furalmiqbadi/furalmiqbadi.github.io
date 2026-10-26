@@ -10,7 +10,7 @@ window.PF_CV_EN = {
   "copy": {
     "cv.role": "Frontend Developer - Web & Mobile",
     "cv.download": "Download PDF",
-    "cv.summary": "D4 Informatics Engineering student at Politeknik Negeri Malang (GPA 3.78/4.00) and frontend developer on three team projects: a PHP laboratory profile site, a Laravel race photo marketplace, and a Flutter sign language app where I also lead the team and own the on-device model.",
+    "cv.summary": "D4 Informatics Engineering student at Politeknik Negeri Malang with a 3.78/4.00 GPA and frontend developer on three team projects: a PHP laboratory profile site, a Laravel race photo marketplace, and a Flutter sign language app where I also led the team and was responsible for the machine learning model.",
     "cv.h.summary": "Professional Summary",
     "cv.h.skills": "Technical Skills",
     "cv.h.experience": "Experience",
@@ -18,7 +18,7 @@ window.PF_CV_EN = {
     "cv.h.certifications": "Certifications & Training",
     "cv.h.additional": "Additional",
     "cv.edu.school": "Politeknik Negeri Malang - D4 Informatics Engineering",
-    "cv.edu.sub": "GPA 3.78 / 4.00 · Coursework: web programming, database systems, mobile programming, software engineering",
+    "cv.edu.sub": "GPA 3.78 / 4.00 · Relevant coursework: Web Design and Programming, Advanced Web Programming, Databases, Advanced Databases, Object-Oriented Programming, Algorithms and Data Structures, Software Engineering, Interface Design, Computer Networks, Network Administration and Security, Artificial Intelligence, Machine Learning, Image Processing and Computer Vision, Mobile Programming, Project Management, Software Quality Assurance",
     "cv.edu.dates": "2024 - present",
     "cv.skill.0.label": "Programming languages",
     "cv.skill.0.value": "PHP, Dart, JavaScript, SQL, HTML/CSS",
@@ -34,7 +34,7 @@ window.PF_CV_EN = {
     "cv.exp.0.sub": "Project Manager, Frontend, ML Engineer · Team of 5 · Flutter, TFLite",
     "cv.exp.0.dates": "Aug 2026 - Present",
     "cv.exp.0.b0": "Lead a five-person team on a BISINDO learning app, splitting work by folder and enforcing a thin-controller/service-layer architecture so UI code never calls the model or network directly.",
-    "cv.exp.0.b1": "Built the learning-path, material, and camera screens in Flutter with Provider state management, and prepared the TFLite classifier for the 26 BISINDO alphabet signs plus the crop/resize/normalize pipeline feeding inference from the device camera.",
+    "cv.exp.0.b1": "Built the learning-path, material, and camera screens in Flutter with Provider state management, and prepared the model classifier for reading BISINDO hand shapes plus the crop/resize/normalize pipeline feeding inference from the device camera.",
     "cv.exp.1.title": "KeJepret - Race Photo Marketplace",
     "cv.exp.1.sub": "Frontend Developer · Team of 4 · Laravel 12, Blade, Tailwind CSS 4",
     "cv.exp.1.dates": "Feb 2026 - Jun 2026",
@@ -53,9 +53,7 @@ window.PF_CV_EN = {
     "cv.cert.2.date": "Mar 2023",
     "cv.cert.3.name": "Flutter for Beginners, Dart, Programming Logic 101 - Dicoding",
     "cv.cert.3.date": "Oct 2023",
-    "cv.add.0.label": "Soft skills",
-    "cv.add.0.value": "Quick to pick up new stacks, cross-functional team coordination, multi-project time management, written communication",
-    "cv.add.1.label": "Languages",
-    "cv.add.1.value": "Indonesian (native), English (professional working proficiency)"
+    "cv.add.0.label": "Languages",
+    "cv.add.0.value": "Indonesian (native), English (intermediate)"
   }
 };

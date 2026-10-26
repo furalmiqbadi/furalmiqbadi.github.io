@@ -8,7 +8,7 @@
   function fit() {
     var available = document.documentElement.clientWidth - 24;
     var zoom = Math.min(1, available / A4_WIDTH);
-    sheet.style.setProperty('--cv-zoom', zoom.toFixed(3));
+    sheet.style.zoom = zoom.toFixed(3);
   }
 
   fit();

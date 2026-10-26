@@ -18,9 +18,7 @@
 
 <main class="wrap page">
 
-  <a class="mark" href="/" aria-label="Abdul Ghofur Almiqbadi - portofolio">
-    <img src="/assets/img/favicon.svg" alt="" width="40" height="40">
-  </a>
+  <a class="back" href="/" data-i18n="p.back">← Kembali ke portofolio</a>
 
   <p class="page__kind" data-i18n="p.kind">Mobile</p>
   <h1 class="page__title" data-i18n="p.title">Codename Tree</h1>
@@ -41,7 +39,7 @@
     <p data-i18n="p.role">Solo. Arsitektur, UI, data, keamanan, dan build.</p>
 
     <h2 data-i18n="h.built">Yang saya bangun</h2>
-    <p data-i18n="p.built">Lima aplikasi Flutter terpisah dalam satu monorepo, berbagi paket inti: <code>arku_core</code> (tema, token, widget dasar), <code>arku_data</code> (skema Drift/SQLite dan repository), <code>arku_sync</code>, <code>arku_premium</code>, dan <code>arku_media</code>. Catatan terkunci dienkripsi AES-256-GCM dengan kunci turunan PIN lewat PBKDF2 120.000 iterasi, sehingga isi database tidak terbaca tanpa PIN.</p>
+    <p data-i18n="p.built">Lima aplikasi Flutter terpisah dalam satu monorepo, berbagi paket inti. Catatan terkunci dienkripsi AES-256-GCM dengan kunci turunan PIN lewat PBKDF2 120.000 iterasi, sehingga isi database tidak terbaca tanpa PIN.</p>
 
     <h2 data-i18n="h.result">Hasil</h2>
     <p class="result" data-i18n="p.result">Kelima aplikasi memakai satu sumber tema dan satu pola akses data, sehingga perubahan di paket inti berlaku ke semuanya sekaligus. Isi catatan terkunci tetap tidak terbaca meski file database diambil langsung.</p>

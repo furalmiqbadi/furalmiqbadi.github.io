@@ -120,8 +120,7 @@ a {
 }
 
 .cv-head {
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--rule);
+  padding-bottom: 10px;
 }
 
 .cv-head h1 {
@@ -146,8 +145,8 @@ a {
 }
 
 .cv-head .contact span + span::before {
-  content: "·";
-  margin: 0 7px;
+  content: "|";
+  margin: 0 8px;
   color: var(--ink-3);
 }
 

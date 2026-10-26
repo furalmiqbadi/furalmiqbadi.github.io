@@ -16,6 +16,7 @@ window.PF_PAGES_EN = {
     "h.topics": "Topics",
     "h.relevance": "Relevance",
     "h.tools": "Tools",
+    "p.back": "Back to portfolio",
     "p.tech": "Technology",
     "p.repo": "Repository",
     "p.demo": "Demo not available yet",
@@ -29,7 +30,7 @@ window.PF_PAGES_EN = {
         "p.kind": "Web",
         "p.title": "Lab Profile Multimedia and Mobile Technology",
         "p.meta": "Frontend designer, some backend · 6 people · Oct-Dec 2025",
-        "p.problem": "The laboratory had its material scattered across many places: profile, project catalog, gallery, news, lecturer list, and student work. There was no single place to present it, and every update had to go through someone who could edit code.",
+        "p.problem": "The laboratory had a lot that needed publishing: profile, project catalog, gallery, news, lecturer list, and student work. But there was no single place to present it, and every update had to go through code.",
         "p.role": "Frontend designer for several pages, plus part of the controllers and queries, and the admin pages used to manage site content.",
         "p.built": "Home, about, project catalog, gallery, news, lecturer profiles, and student work pages with a view/controller/model split. An admin panel to add, edit, and delete gallery, news, and catalog entries.",
         "p.result": "Lab staff can update the gallery, news, and catalog themselves without touching code.",
@@ -57,9 +58,9 @@ window.PF_PAGES_EN = {
         "p.kind": "Mobile",
         "p.title": "Sign.L",
         "p.meta": "Project manager, frontend, machine learning · 5 people · Aug 2026-present",
-        "p.problem": "Learning BISINDO from video gives no feedback. Nothing tells you whether your hand shape is actually correct.",
+        "p.problem": "Learning BISINDO from video gives no feedback. It is hard to go at your own pace. Nothing tells you whether the hand shape you made is actually correct.",
         "p.role": "Project manager, frontend, and machine learning. I split the team workload by folder, kept the architecture consistent, and prepared the dataset and model.",
-        "p.built": "A Flutter app with a thin-controller architecture and a service layer, so UI code never calls the model or the network directly. Material, camera, quiz, and community screens. The camera flow: capture, crop, resize, normalise, then run inference on the device.",
+        "p.built": "A Flutter app with a thin-controller architecture and a service layer, so UI code never calls the model or the network directly. Material, camera, quiz, and community screens. Model creation and model optimisation.",
         "p.result": "The camera reads hand shapes and checks them on the device. The project is still running.",
         "next.link": "Codename Tree",
         "p.status": "In progress"
@@ -74,36 +75,15 @@ window.PF_PAGES_EN = {
         "p.meta": "Solo · Ongoing",
         "p.problem": "Notes, tasks, money, habits, and schedule usually live in five different apps, each with its own look and its own way of working. Merging them into one large app makes every part heavy and hard to maintain.",
         "p.role": "Solo. Architecture, UI, data, security, and build.",
-        "p.built": "Five separate Flutter apps in one monorepo, sharing core packages: <code>arku_core</code> (theme, tokens, base widgets), <code>arku_data</code> (Drift/SQLite schema and repositories), <code>arku_sync</code>, <code>arku_premium</code>, and <code>arku_media</code>. Locked notes are encrypted with AES-256-GCM using a key derived from the PIN through PBKDF2 at 120,000 iterations, so the database stays unreadable without the PIN.",
+        "p.built": "Five separate Flutter apps in one monorepo, sharing core packages. Locked notes are encrypted with AES-256-GCM using a key derived from the PIN through PBKDF2 at 120,000 iterations, so the database stays unreadable without the PIN.",
         "p.result": "All five apps draw from one theme source and one data access pattern, so a change in the core package applies to all of them at once. Locked note content stays unreadable even if the database file is taken directly.",
         "next.link": "Lab Profile MMT",
         "p.status": "The project is still running. The five apps, the shared packages, and note encryption are already in the repository. Drive sync, premium, and photo attachments are still in progress."
       }
     },
-    "experience": {
-      "title": "Experience - Abdul Ghofur Almiqbadi",
-      "desc": "Organisations and part-time work",
-      "copy": {
-        "p.back": "Back to portfolio",
-        "p.title": "Experience",
-        "p.meta": "Organisations and part-time work",
-        "e.1.role": "Network & Broadcasting Staff",
-        "e.1.meta": "Malang · On site · Jul 2025 - present · 1 yr 4 mo",
-        "e.1.lead": "Produced and broadcast pesantren events as videotron, camera, and livestream operator.",
-        "e.2.role": "Research, Talent & Interests Staff",
-        "e.2.meta": "Malang · Mar 2025 - Feb 2026 · 1 yr",
-        "e.2.lead": "Member of the research and talent department, plus ten department event committees.",
-        "e.3.role": "Software Programming Staff",
-        "e.3.meta": "Malang · On site · Nov 2024 - Dec 2025 · 1 yr 2 mo",
-        "e.3.lead": "Trained YOLO-based object detection models for autonomous robot navigation.",
-        "e.4.role": "Social Media Admin",
-        "e.4.meta": "Bandung · Remote · Nov 2023 - Jul 2024 · 9 mo",
-        "e.4.lead": "Ran Instagram and Facebook for the Mobile Legends news division."
-      }
-    },
     "exp-al-hikam": {
       "title": "Al-Hikam Media Center - Abdul Ghofur Almiqbadi",
-      "desc": "Produced and broadcast pesantren events as videotron, camera, and livestream operator.",
+      "desc": "Videotron, camera, and livestream operator for graduation, Festival Ilmiah Santri, and Manasik Haji events.",
       "copy": {
         "p.kind": "Organisation",
         "p.meta": "Malang · On site · Jul 2025 - present · 1 yr 4 mo",
@@ -140,7 +120,7 @@ window.PF_PAGES_EN = {
     },
     "exp-robotics": {
       "title": "Polinema Robotics - Abdul Ghofur Almiqbadi",
-      "desc": "Trained YOLO-based object detection models for autonomous robot navigation.",
+      "desc": "Trained models for robot navigation through data annotation, image preprocessing, and real-time object detection in Python.",
       "copy": {
         "p.kind": "Organisation",
         "p.meta": "Malang · On site · Nov 2024 - Dec 2025 · 1 yr 2 mo",
@@ -162,7 +142,7 @@ window.PF_PAGES_EN = {
         "p.role": "Social Media Admin",
         "p.desc": "Ran Instagram and Facebook for the Mobile Legends news division: topic research, writing, editing visual and video assets, daily publishing, and comment moderation.",
         "p.tools": "Canva · CapCut",
-        "next.link": "All experience"
+        "next.link": "Back to portfolio"
       }
     },
     "certifications": {
