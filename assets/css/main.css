@@ -1,15 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..600&display=swap");
+
 :root {
-  --paper: #faf8f4;
-  --paper-soft: #f1ede4;
-  --ink: #14120f;
-  --ink-2: #4b463f;
-  --ink-3: #857e73;
-  --line: #e2dcd0;
+  --paper: #faf7f2;
+  --paper-2: #fffdf9;
+  --paper-soft: #efe9dd;
+  --ink: #17130e;
+  --ink-2: #4a443b;
+  --ink-3: #8a8578;
+  --line: #e4dccd;
+  --line-strong: #d5cab6;
   --accent: #b45309;
-  --max: 1120px;
+  --max: 1140px;
   --gutter: clamp(20px, 5vw, 56px);
-  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 6px;
+  --pill: 999px;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
@@ -44,6 +50,10 @@ a {
   color: inherit;
 }
 
+[id] {
+  scroll-margin-top: 88px;
+}
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -61,7 +71,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--paper);
+  background: rgba(250, 247, 242, 0.86);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -70,44 +82,76 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 64px;
+  height: 68px;
 }
 
 .brand {
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.12);
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2.4vw, 28px);
+  gap: clamp(16px, 2.4vw, 30px);
   margin-left: auto;
 }
 
 .site-nav a {
+  position: relative;
+  padding-block: 4px;
   font-size: 13px;
   color: var(--ink-2);
   text-decoration: none;
   transition: color 0.16s ease;
 }
 
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+}
+
 .site-nav a:hover {
   color: var(--ink);
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .lang {
   display: flex;
   margin-left: clamp(16px, 2.4vw, 28px);
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: var(--pill);
   overflow: hidden;
 }
 
 .lang__btn {
-  padding: 6px 10px;
+  padding: 6px 11px;
   border: 0;
   background: transparent;
   color: var(--ink-3);
@@ -135,11 +179,26 @@ a {
 /* ---------- hero ---------- */
 
 .hero {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 248px;
+  grid-template-columns: minmax(0, 1fr) clamp(200px, 24vw, 288px);
   gap: clamp(32px, 6vw, 80px);
-  align-items: end;
-  padding-block: clamp(56px, 9vw, 112px) clamp(44px, 7vw, 84px);
+  align-items: center;
+  padding-block: clamp(52px, 8vw, 104px) clamp(40px, 6vw, 68px);
+}
+
+/* Warm halo behind the portrait, kept low so the type stays the hero. */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 6%;
+  right: -6%;
+  width: clamp(280px, 34vw, 470px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, rgba(180, 83, 9, 0.16), rgba(180, 83, 9, 0) 68%);
+  pointer-events: none;
 }
 
 .eyebrow {
@@ -164,23 +223,25 @@ a {
 .hero h1 {
   margin: 0 0 24px;
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
   font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.028em;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
 .hero h1 em {
   font-style: italic;
+  font-weight: 300;
   color: var(--accent);
+  overflow-wrap: break-word;
 }
 
 .lead {
-  max-width: 54ch;
-  margin: 0 0 34px;
-  font-size: clamp(15.5px, 1.4vw, 17.5px);
-  line-height: 1.65;
+  max-width: 52ch;
+  margin: 0 0 32px;
+  font-size: clamp(15.5px, 1.35vw, 17px);
+  line-height: 1.7;
   color: var(--ink-2);
 }
 
@@ -192,20 +253,22 @@ a {
 
 .btn {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 13px 24px;
   border: 1px solid var(--ink);
-  border-radius: 2px;
+  border-radius: var(--pill);
   background: var(--ink);
   color: var(--paper);
   font-size: 13px;
   font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  transition: background 0.18s ease, color 0.18s ease;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
 .btn:hover {
   background: transparent;
   color: var(--ink);
+  transform: translateY(-1px);
 }
 
 .btn--ghost {
@@ -218,42 +281,77 @@ a {
   color: var(--paper);
 }
 
-.facts {
+/* Portrait sits in a ring; initials stay under the photo so the slot never looks broken. */
+.portrait {
+  position: relative;
   display: grid;
+  place-items: center;
   margin: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 32% 24%, #f7ead6, #e8dac1 58%, #d8c6a6);
+  box-shadow: 0 30px 70px -40px rgba(23, 19, 14, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.portrait__initials {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #b08a5b;
+}
+
+.portrait__img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait.is-empty .portrait__img {
+  display: none;
+}
+
+.facts {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: clamp(32px, 5vw, 56px) 0 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+  overflow: hidden;
 }
 
 .facts > div {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 11px 0;
-  border-top: 1px solid var(--line);
-}
-
-.facts > div:last-child {
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+  padding: 16px 20px;
+  background: var(--paper-2);
 }
 
 .facts dt {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
 
 .facts dd {
   margin: 0;
-  font-size: 13px;
-  text-align: right;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 /* ---------- sections ---------- */
 
 .section {
-  padding-block: clamp(48px, 7vw, 92px);
+  padding-block: clamp(48px, 7vw, 96px);
   border-top: 1px solid var(--line);
 }
 
@@ -262,18 +360,19 @@ a {
   align-items: baseline;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: clamp(26px, 4vw, 44px);
+  margin-bottom: clamp(26px, 4vw, 46px);
 }
 
 .section__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.6vw, 2.05rem);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .section__meta {
+  margin: 0;
   font-family: var(--font-mono);
   font-size: 10.5px;
   letter-spacing: 0.12em;
@@ -282,7 +381,7 @@ a {
   text-align: right;
 }
 
-/* ---------- work ---------- */
+/* ---------- experience ---------- */
 
 .work {
   position: relative;
@@ -291,6 +390,7 @@ a {
   gap: clamp(16px, 3vw, 40px);
   padding-block: clamp(24px, 3.2vw, 34px);
   border-top: 1px solid var(--line);
+  transition: background 0.2s ease;
 }
 
 .work:first-child {
@@ -299,21 +399,22 @@ a {
 }
 
 .work__num {
-  padding-top: 7px;
+  padding-top: 6px;
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  color: var(--accent);
 }
 
 .work h3 {
   margin: 0 0 7px;
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
-/* Stretches the detail link over the whole card so anywhere is clickable. */
+/* Stretches the detail link over the whole row so anywhere is clickable. */
 .work__detail {
   text-decoration: none;
   transition: color 0.16s ease;
@@ -330,7 +431,7 @@ a {
 }
 
 .work p {
-  max-width: 60ch;
+  max-width: 62ch;
   margin: 0 0 16px;
   font-size: 14.5px;
   line-height: 1.65;
@@ -396,9 +497,9 @@ a {
 }
 
 .tags li {
-  padding: 4px 8px;
+  padding: 4px 9px;
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: var(--pill);
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.06em;
@@ -410,7 +511,7 @@ a {
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: clamp(32px, 6vw, 72px);
 }
 
@@ -418,7 +519,7 @@ a {
   max-width: 60ch;
   margin: 0 0 18px;
   font-size: 15.5px;
-  line-height: 1.7;
+  line-height: 1.72;
   color: var(--ink-2);
 }
 
@@ -428,8 +529,14 @@ a {
 
 .skills {
   display: grid;
-  gap: 18px;
+  gap: 0;
   margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.skills > div {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .skills dt {
@@ -438,7 +545,7 @@ a {
   font-size: 10.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--accent);
 }
 
 .skills dd {
@@ -455,8 +562,9 @@ a {
 
 .edu__school {
   margin: 0 0 4px;
-  font-size: 14.5px;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
 .edu__meta {
@@ -516,20 +624,40 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1px;
   border: 1px solid var(--line);
+  border-radius: var(--radius);
   background: var(--line);
+  overflow: hidden;
 }
 
 .contact-links a {
+  position: relative;
   display: grid;
   gap: 6px;
-  padding: 20px;
-  background: var(--paper);
+  padding: 22px 20px;
+  background: var(--paper-2);
   text-decoration: none;
   transition: background 0.16s ease;
 }
 
+.contact-links a::after {
+  content: "↗";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 13px;
+  color: var(--accent);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 .contact-links a:hover {
   background: var(--paper-soft);
+}
+
+.contact-links a:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .contact-links .label {
@@ -543,6 +671,7 @@ a {
 .contact-links .value {
   font-size: 14.5px;
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 /* ---------- footer ---------- */
@@ -569,7 +698,13 @@ a {
   text-underline-offset: 3px;
 }
 
-/* ---------- project list (three stacked, photo on the right) ---------- */
+/* ---------- project cards ---------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 28px);
+}
 
 /* Project type and origin labels, kept short so the card stays scannable. */
 .chips {
@@ -580,9 +715,9 @@ a {
 }
 
 .chip {
-  padding: 4px 9px;
-  border: 1px solid var(--accent);
-  border-radius: 2px;
+  padding: 4px 10px;
+  border: 1px solid rgba(180, 83, 9, 0.45);
+  border-radius: var(--pill);
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -604,28 +739,24 @@ a {
 }
 
 .proj {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(180px, 22vw, 260px);
-  gap: clamp(18px, 3vw, 38px);
-  align-items: start;
-  padding-block: clamp(24px, 3vw, 34px);
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  overflow: hidden;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
 }
 
-.proj:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-/* Cards without a screenshot use the full width instead of an empty column. */
-.proj--wide {
-  grid-template-columns: minmax(0, 1fr);
+.proj:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 26px 50px -38px rgba(23, 19, 14, 0.6);
+  transform: translateY(-2px);
 }
 
 .proj__shot {
   margin: 0;
-  border: 1px solid var(--line);
-  border-radius: 2px;
+  border-bottom: 1px solid var(--line);
   background: var(--paper-soft);
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -635,15 +766,43 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+
+.proj:hover .proj__shot img {
+  transform: scale(1.03);
+}
+
+/* Keeps the card shape when a screenshot has not been added yet. */
+.proj__shot.is-empty {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, #f3e9d8, #e9dcc4);
+}
+
+.proj__placeholder {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(176, 138, 91, 0.75);
+}
+
+.proj__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(20px, 2.4vw, 26px);
 }
 
 .proj h3 {
   margin: 0 0 8px;
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.022em;
 }
 
 .proj h3 a {
@@ -651,7 +810,7 @@ a {
   transition: color 0.16s ease;
 }
 
-.proj h3 a:hover {
+.proj:hover h3 a {
   color: var(--accent);
 }
 
@@ -675,11 +834,11 @@ a {
 /* The result line is the strongest claim on the card, so it gets its own block. */
 .proj__result {
   max-width: 56ch;
-  margin: 0 0 14px;
-  padding: 12px 14px;
+  margin: 0 0 16px;
+  padding: 11px 14px;
   border-left: 3px solid var(--accent);
   background: var(--paper-soft);
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.6;
   color: var(--ink);
 }
@@ -692,7 +851,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  margin: 0;
+  margin: auto 0 0;
+  padding-top: 2px;
   font-size: 13px;
 }
 
@@ -701,7 +861,7 @@ a {
   text-decoration: none;
   border-bottom: 1px solid var(--line);
   padding-bottom: 2px;
-  transition: border-color 0.16s ease;
+  transition: border-color 0.16s ease, color 0.16s ease;
 }
 
 .proj__links a:hover {
@@ -720,9 +880,9 @@ a {
 .pager button {
   min-width: 30px;
   height: 30px;
-  padding: 0 8px;
+  padding: 0 9px;
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: var(--pill);
   background: transparent;
   font-family: var(--font-mono);
   font-size: 11px;
@@ -760,7 +920,7 @@ a {
   position: relative;
   margin: 0;
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: var(--radius);
   background: var(--paper-soft);
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -787,7 +947,7 @@ a {
   aspect-ratio: 16 / 10;
   padding: 0;
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: 4px;
   background: var(--paper-soft);
   cursor: pointer;
   overflow: hidden;
@@ -809,27 +969,40 @@ a {
 
 @media (max-width: 900px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 200px;
     align-items: start;
-    padding-block: clamp(44px, 8vw, 72px);
-  }
-
-  .facts {
-    max-width: 420px;
+    padding-block: clamp(44px, 8vw, 72px) 40px;
   }
 
   .about {
     grid-template-columns: 1fr;
   }
 
-  .proj {
-    grid-template-columns: minmax(0, 1fr) 200px;
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px) {
   .site-nav {
     display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    width: min(200px, 52vw);
+    order: -1;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
   }
 
   .section__head {
@@ -851,14 +1024,8 @@ a {
     display: none;
   }
 
-  /* On narrow screens the photo moves under the text and shrinks. */
-  .proj {
-    grid-template-columns: 1fr;
-  }
-
   .proj__shot {
-    max-width: 260px;
-    order: -1;
+    aspect-ratio: 16 / 10;
   }
 }
 

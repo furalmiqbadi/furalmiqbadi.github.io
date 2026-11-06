@@ -63,6 +63,11 @@
       </div>
     </div>
 
+    <figure class="portrait">
+      <span class="portrait__initials" aria-hidden="true">AG</span>
+      <img class="portrait__img" src="/assets/img/profile.jpg" width="640" height="640" alt="Foto Abdul Ghofur Almiqbadi">
+    </figure>
+
     <dl class="facts">
       <div>
         <dt data-i18n="facts.focus.label">Fokus</dt>
@@ -86,11 +91,13 @@
         <p class="section__meta" data-i18n="work.meta">Semua proyek</p>
       </div>
 
-      <div class="paged" data-paged>
-        <div class="paged__page is-active">
+      <div class="project-grid">
 
         <article class="proj">
-          <div>
+          <figure class="proj__shot" data-fallback="LM">
+            <img src="/assets/img/work/lab-profile/main-lab.png" alt="Tangkapan layar halaman beranda Lab Profile MMT" loading="lazy">
+          </figure>
+          <div class="proj__body">
             <p class="chips">
               <span class="chip">Web</span>
               <span class="chip chip--soft" data-i18n="work.origin.pbl">Project-based learning</span>
@@ -103,13 +110,13 @@
               <a href="/work/lab-profile/" data-i18n="work.detail">Lihat detail</a>
             </p>
           </div>
-          <figure class="proj__shot">
-            <img src="/assets/img/work/lab-profile/main-lab.png" alt="Tangkapan layar halaman beranda Lab Profile MMT">
-          </figure>
         </article>
 
         <article class="proj">
-          <div>
+          <figure class="proj__shot" data-fallback="KJ">
+            <img src="/assets/img/work/kejepret/main-kejepret.png" alt="Tangkapan layar halaman pencarian foto KeJepret" loading="lazy">
+          </figure>
+          <div class="proj__body">
             <p class="chips">
               <span class="chip">Web</span>
               <span class="chip chip--soft" data-i18n="work.origin.pbl">Project-based learning</span>
@@ -122,13 +129,13 @@
               <a href="/work/kejepret/" data-i18n="work.detail">Lihat detail</a>
             </p>
           </div>
-          <figure class="proj__shot">
-            <img src="/assets/img/work/kejepret/main-kejepret.png" alt="Tangkapan layar halaman pencarian foto KeJepret">
-          </figure>
         </article>
 
         <article class="proj">
-          <div>
+          <figure class="proj__shot" data-fallback="SL">
+            <img src="/assets/img/work/signl/main-signl.png" alt="Tangkapan layar aplikasi Sign.L" loading="lazy">
+          </figure>
+          <div class="proj__body">
             <p class="chips">
               <span class="chip">Mobile</span>
               <span class="chip chip--soft" data-i18n="work.origin.pbl">Project-based learning</span>
@@ -142,17 +149,13 @@
               <a href="/work/signl/" data-i18n="work.detail">Lihat detail</a>
             </p>
           </div>
-          <figure class="proj__shot">
-            <img src="/assets/img/work/signl/main-signl.png" alt="Tangkapan layar aplikasi Sign.L">
-          </figure>
         </article>
 
-        </div>
-
-        <div class="paged__page">
-
         <article class="proj">
-          <div>
+          <figure class="proj__shot" data-fallback="CT">
+            <img src="/assets/img/work/codename-tree/main-codename-tree.png" alt="Tangkapan layar aplikasi Codename Tree" loading="lazy">
+          </figure>
+          <div class="proj__body">
             <p class="chips">
               <span class="chip">Mobile</span>
               <span class="chip chip--soft" data-i18n="work.origin.solo">Proyek sendiri</span>
@@ -165,14 +168,7 @@
               <a href="/work/codename-tree/" data-i18n="work.detail">Lihat detail</a>
             </p>
           </div>
-          <figure class="proj__shot">
-            <img src="/assets/img/work/codename-tree/main-codename-tree.png" alt="Tangkapan layar aplikasi Codename Tree">
-          </figure>
         </article>
-
-        </div>
-
-        <div class="pager" data-pager></div>
 
       </div>
     </div>

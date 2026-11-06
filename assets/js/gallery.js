@@ -164,20 +164,38 @@
     });
   }
 
-  // Homepage cards drop the photo frame when the screenshot file is missing.
+  // Homepage cards keep their frame and show a monogram when a screenshot is missing.
   function setupShots() {
     Array.prototype.forEach.call(document.querySelectorAll('.proj__shot'), function (frame) {
       var img = frame.querySelector('img');
 
       function drop() {
-        if (!frame.parentNode) return;
-        frame.parentNode.classList.add('proj--wide');
-        frame.remove();
+        var mark = document.createElement('span');
+        mark.className = 'proj__placeholder';
+        mark.textContent = frame.getAttribute('data-fallback') || '';
+        frame.classList.add('is-empty');
+        frame.innerHTML = '';
+        frame.appendChild(mark);
       }
 
       if (!img) {
         drop();
         return;
+      }
+
+      img.addEventListener('error', drop);
+      if (img.complete && img.naturalWidth === 0) drop();
+    });
+  }
+
+  // The hero portrait shows its initials until a profile photo exists at the declared path.
+  function setupPortrait() {
+    Array.prototype.forEach.call(document.querySelectorAll('.portrait'), function (frame) {
+      var img = frame.querySelector('.portrait__img');
+      if (!img) return;
+
+      function drop() {
+        frame.classList.add('is-empty');
       }
 
       img.addEventListener('error', drop);
@@ -210,4 +228,5 @@
   Array.prototype.forEach.call(document.querySelectorAll('[data-gallery]'), setupGallery);
   Array.prototype.forEach.call(document.querySelectorAll('[data-paged]'), setupPaged);
   setupShots();
+  setupPortrait();
 })();
