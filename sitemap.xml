@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://furalmiqbadi.my.id/work/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://furalmiqbadi.my.id/work/lab-profile/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -25,10 +31,10 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://furalmiqbadi.my.id/work/codename-tree/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://furalmiqbadi.my.id/experience/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://furalmiqbadi.my.id/experience/al-hikam/</loc>

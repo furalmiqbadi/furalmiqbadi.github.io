@@ -62,23 +62,8 @@ window.PF_PAGES_EN = {
         "p.role": "Project manager, frontend, and machine learning. I split the team workload by folder, kept the architecture consistent, and prepared the dataset and model.",
         "p.built": "A Flutter app with a thin-controller architecture and a service layer, so UI code never calls the model or the network directly. Material, camera, quiz, and community screens. Model creation and model optimisation.",
         "p.result": "The camera reads hand shapes and checks them on the device. The project is still running.",
-        "next.link": "Codename Tree",
-        "p.status": "In progress"
-      }
-    },
-    "codename-tree": {
-      "title": "Codename Tree - Abdul Ghofur Almiqbadi",
-      "desc": "Five Flutter apps in one monorepo with shared core packages, encrypted notes, and a single theme source.",
-      "copy": {
-        "p.kind": "Mobile",
-        "p.title": "Codename Tree",
-        "p.meta": "Solo · Ongoing",
-        "p.problem": "Notes, tasks, money, habits, and schedule usually live in five different apps, each with its own look and its own way of working. Merging them into one large app makes every part heavy and hard to maintain.",
-        "p.role": "Solo. Architecture, UI, data, security, and build.",
-        "p.built": "Five separate Flutter apps in one monorepo, sharing core packages. Locked notes are encrypted with AES-256-GCM using a key derived from the PIN through PBKDF2 at 120,000 iterations, so the database stays unreadable without the PIN.",
-        "p.result": "All five apps draw from one theme source and one data access pattern, so a change in the core package applies to all of them at once. Locked note content stays unreadable even if the database file is taken directly.",
         "next.link": "Lab Profile MMT",
-        "p.status": "The project is still running. The five apps, the shared packages, and note encryption are already in the repository. Drive sync, premium, and photo attachments are still in progress."
+        "p.status": "In progress"
       }
     },
     "exp-al-hikam": {
@@ -285,7 +270,7 @@ window.PF_PAGES_EN = {
         "p.title": "Belajar Membuat Aplikasi Flutter untuk Pemula",
         "p.meta": "Oct 2023 · valid until Oct 2026",
         "p.about": "An introductory Flutter class from Dicoding. It covers building a mobile interface from widgets, composing layouts, and handling simple state.",
-        "p.relevance": "This is where I started with Flutter, which I later used to build Sign.L and the five apps in Codename Tree.",
+        "p.relevance": "This is where I started with Flutter, which I later used to build Sign.L.",
         "next.link": "Memulai Pemrograman dengan Dart",
         "p.t1": "Widgets and layout",
         "p.t2": "Simple state",
@@ -323,6 +308,52 @@ window.PF_PAGES_EN = {
         "p.t2": "Branching",
         "p.t3": "Loops",
         "p.t4": "Pseudocode"
+      }
+    },
+    "work-all": {
+      "title": "All Projects - Abdul Ghofur Almiqbadi",
+      "desc": "Project archive: campus laboratory profile, race photo marketplace, and a BISINDO learning app.",
+      "copy": {
+        "p.kind": "Archive",
+        "p.title": "All projects",
+        "p.meta": "Three selected projects, from a campus site to a mobile app.",
+        "p.card1.tag": "Web",
+        "p.card1.title": "Lab Profile MMT",
+        "p.card1.meta": "Frontend + some backend · 6 people · Oct-Dec 2025",
+        "p.card1.desc": "Campus laboratory profile site with an admin panel for the gallery, news, and catalog.",
+        "p.card2.tag": "Web",
+        "p.card2.title": "KeJepret",
+        "p.card2.meta": "Frontend + some backend · 4 people · Feb-Jun 2026",
+        "p.card2.desc": "Race photo marketplace where runners find their photos by face search, then buy the originals from the photographer.",
+        "p.card3.title": "Sign.L",
+        "p.card3.meta": "Project manager, frontend, ML · 5 people · Aug 2026-present",
+        "p.card3.desc": "BISINDO learning app with a camera that reads hand shapes, plus quizzes and a community."
+      }
+    },
+    "experience-all": {
+      "title": "All Experience - Abdul Ghofur Almiqbadi",
+      "desc": "Organisation and part-time experience: media center, HMTI, robotics, and social media.",
+      "copy": {
+        "p.kind": "Archive",
+        "p.title": "All experience",
+        "p.meta": "Organisations and part-time work outside class.",
+        "exp.detail": "View detail",
+        "all.exp1.role": "Network & Broadcasting Staff",
+        "all.exp1.org": "Al-Hikam Media Center",
+        "all.exp1.desc": "Videotron, camera, and livestream operator for graduation, Festival Ilmiah Santri, and Manasik Haji events.",
+        "all.exp1.meta": "Jul 2025 - present · 1 yr 4 mo",
+        "all.exp2.role": "Research, Talent & Interests Staff",
+        "all.exp2.org": "HMTI Polinema",
+        "all.exp2.desc": "Chair of the 2025 Musyawarah Kerja work programme, plus ten other committees across PDD, equipment, public relations, and catering.",
+        "all.exp2.meta": "Mar 2025 - Feb 2026 · 1 yr",
+        "all.exp3.role": "Software Programming Staff",
+        "all.exp3.org": "Polinema Robotics",
+        "all.exp3.desc": "Trained models for robot navigation through data annotation, image preprocessing, and real-time object detection in Python.",
+        "all.exp3.meta": "Nov 2024 - Dec 2025 · 1 yr 2 mo",
+        "all.exp4.role": "Social Media Admin",
+        "all.exp4.org": "RISEUPTVID Network",
+        "all.exp4.desc": "Ran Instagram and Facebook for the Mobile Legends news division: research, editing, daily publishing, and comment moderation.",
+        "all.exp4.meta": "Nov 2023 - Jul 2024 · 9 mo · Remote"
       }
     }
   }
