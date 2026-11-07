@@ -4,6 +4,7 @@
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ring = document.querySelector(".portrait__ring");
+  var header = document.querySelector(".site-header");
   var slider = document.querySelector("[data-project-slider]");
   var track = slider ? slider.querySelector(".project-track") : null;
   var originals = track
@@ -90,11 +91,72 @@
   if (track) {
     track.addEventListener("transitionend", function (event) {
       if (event.propertyName !== "transform" || position < count) return;
+      // Suppress card-level transitions during the seamless reset so there
+      // is no flash of the card animating from non-active to active state.
+      slider.classList.add("is-resetting");
+      void track.offsetWidth; // force reflow so "none" takes effect
       apply(position - count, false);
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          slider.classList.remove("is-resetting");
+        });
+      });
     });
   }
 
-  apply(1, false);
+  // Start from the first card (index 0) so the loop order is natural.
+  apply(0, false);
+
+  // Sticky left index: the active title lifts under the line, the rest wait in
+  // their own slots and stay visible.
+  var rail = document.querySelector("[data-section-rail]");
+  var railItems = rail
+    ? Array.prototype.slice.call(rail.querySelectorAll(".section-rail__item"))
+    : [];
+  var railTargets = railItems.map(function (item) {
+    return document.querySelector(item.getAttribute("href"));
+  });
+
+  function paintRail() {
+    if (!railItems.length || !rail.getClientRects().length) return;
+
+    var viewport = window.innerHeight || document.documentElement.clientHeight;
+    var line = viewport * 0.5;
+    var index = -1;
+    var i;
+
+    for (i = 0; i < railTargets.length; i++) {
+      if (railTargets[i] && railTargets[i].getBoundingClientRect().top <= line) {
+        index = i;
+      }
+    }
+
+    railItems.forEach(function (item, j) {
+      var isActive = j === index;
+      item.classList.toggle("is-active", isActive);
+
+      if (index < 0) {
+        // No section active yet — restore CSS nth-child defaults.
+        item.style.removeProperty("--slot");
+        item.style.removeProperty("opacity");
+        return;
+      }
+
+      if (isActive) {
+        // .is-active CSS overrides to 10px; just clear any inline slot.
+        item.style.removeProperty("--slot");
+        item.style.removeProperty("opacity");
+      } else {
+        // rel < 0 → before active (above), rel > 0 → after active (below).
+        // Space all items 28 px apart, centered on the active position (10px).
+        var rel = j - index;
+        item.style.setProperty("--slot", (rel * 28 + 10) + "px");
+
+        // Items the user has already passed are slightly more faded.
+        item.style.opacity = rel < 0 ? "0.3" : "";
+      }
+    });
+  }
 
   function update() {
     ticking = false;
@@ -103,6 +165,13 @@
     if (ring && !reduced) {
       ring.style.transform = "rotate(" + (y * 0.05).toFixed(2) + "deg)";
     }
+
+    // Frosted header: add class after slight scroll
+    if (header) {
+      header.classList.toggle("is-scrolled", y > 10);
+    }
+
+    paintRail();
   }
 
   function onScroll() {

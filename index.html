@@ -62,7 +62,6 @@
           <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
         </svg>
       </button>
-      <a class="archive-link" href="/archive/v1/">Desain v1</a>
       <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Buka menu">
         <span class="nav-toggle__bars" aria-hidden="true"><i></i><i></i></span>
       </button>
@@ -72,6 +71,13 @@
 </header>
 
 <main>
+
+  <nav class="section-rail" aria-label="Indeks bagian" data-section-rail>
+    <a class="section-rail__item" href="#work"><span class="section-rail__num">01</span><span data-i18n="nav.work">Proyek</span></a>
+    <a class="section-rail__item" href="#experience"><span class="section-rail__num">02</span><span data-i18n="nav.experience">Pengalaman</span></a>
+    <a class="section-rail__item" href="#about"><span class="section-rail__num">03</span><span data-i18n="nav.about">Tentang</span></a>
+    <a class="section-rail__item" href="#contact"><span class="section-rail__num">04</span><span data-i18n="nav.contact">Kontak</span></a>
+  </nav>
 
   <section class="wrap hero">
     <div class="hero__grid">
@@ -93,17 +99,6 @@
           </div>
           <span class="portrait__initials" aria-hidden="true">AG</span>
         </figure>
-
-        <dl class="facts">
-          <div>
-            <dt data-i18n="facts.focus.label">Fokus</dt>
-            <dd data-i18n="facts.focus.value">Frontend, web &amp; mobile, IoT, ML</dd>
-          </div>
-          <div>
-            <dt data-i18n="facts.gpa.label">IPK</dt>
-            <dd>3.78 / 4.00</dd>
-          </div>
-        </dl>
       </div>
     </div>
   </section>
@@ -226,7 +221,6 @@
       <div class="exp-grid reveal reveal--stagger">
 
         <article class="exp-card">
-          <p class="exp-card__index" aria-hidden="true">01</p>
           <div class="exp-card__body">
             <p class="exp-card__role" data-i18n="exp.1.role">Network &amp; Broadcasting Staff</p>
             <h3><a href="/experience/al-hikam/">Al-Hikam Media Center</a></h3>
@@ -237,7 +231,6 @@
         </article>
 
         <article class="exp-card">
-          <p class="exp-card__index" aria-hidden="true">02</p>
           <div class="exp-card__body">
             <p class="exp-card__role" data-i18n="exp.2.role">Staff Departemen Riset Minat Bakat</p>
             <h3><a href="/experience/hmti/">HMTI Polinema</a></h3>
@@ -248,7 +241,6 @@
         </article>
 
         <article class="exp-card">
-          <p class="exp-card__index" aria-hidden="true">03</p>
           <div class="exp-card__body">
             <p class="exp-card__role" data-i18n="exp.3.role">Software Programming Staff</p>
             <h3><a href="/experience/robotics/">Polinema Robotics</a></h3>
@@ -259,7 +251,6 @@
         </article>
 
         <article class="exp-card">
-          <p class="exp-card__index" aria-hidden="true">04</p>
           <div class="exp-card__body">
             <p class="exp-card__role" data-i18n="exp.4.role">Social Media Admin</p>
             <h3><a href="/experience/riseup/">RISEUPTVID Network</a></h3>
@@ -367,7 +358,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
     <span>© 2026 Abdul Ghofur Almiqbadi</span>
-    <span><a href="/archive/v1/">Desain v1</a> · <span data-i18n="footer.note">Portfolio</span></span>
+    <span data-i18n="footer.note">Portfolio</span>
   </div>
 </footer>
 
