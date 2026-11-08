@@ -252,8 +252,8 @@ li::marker {
 @media print {
   body {
     background: #fff;
-    font-size: 10pt;
-    line-height: 1.28;
+    font-size: 9.6pt;
+    line-height: 1.22;
   }
 
   .cv-bar {
@@ -269,56 +269,60 @@ li::marker {
     zoom: 1 !important;
     width: 210mm;
     min-height: 0;
-    padding: 12mm 15mm;
+    padding: 10mm 13mm;
     border: 0;
     box-shadow: none;
   }
 
   .cv-head {
-    padding-bottom: 8pt;
+    padding-bottom: 6pt;
   }
 
   .cv-head h1 {
-    font-size: 18pt;
+    font-size: 16pt;
   }
 
   .cv-head .role {
-    margin: 2pt 0 5pt;
-    font-size: 10.8pt;
+    margin: 1pt 0 3pt;
+    font-size: 8.6pt;
   }
 
   .cv-head .contact,
   .entry .dates {
-    font-size: 9pt;
+    font-size: 7.8pt;
   }
 
   h2 {
-    margin: 9pt 0 4pt;
-    font-size: 9.8pt;
+    margin: 6pt 0 2pt;
+    font-size: 8pt;
   }
 
   .entry h3 {
-    font-size: 10.8pt;
+    font-size: 9pt;
   }
 
   .entry .sub,
   li,
   .skills li,
   .summary {
-    font-size: 9.8pt;
+    font-size: 7.8pt;
   }
 
   ul {
-    margin-top: 3pt;
-    padding-left: 14pt;
+    margin-top: 1.5pt;
+    padding-left: 11pt;
   }
 
   li {
-    margin-bottom: 1.2pt;
+    margin-bottom: 0.4pt;
+  }
+
+  .skills li {
+    margin-bottom: 0.4pt;
   }
 
   .entry + .entry {
-    margin-top: 6pt;
+    margin-top: 4pt;
   }
 
   /* Keep headings with their content so nothing splits across pages. */
