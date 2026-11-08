@@ -312,11 +312,11 @@ window.PF_PAGES_EN = {
     },
     "work-all": {
       "title": "All Projects - Abdul Ghofur Almiqbadi",
-      "desc": "Project archive: campus laboratory profile, race photo marketplace, and a BISINDO learning app.",
+      "desc": "Project archive: campus laboratory profile, race photo marketplace, a BISINDO learning app, and a game studio site.",
       "copy": {
         "p.kind": "Archive",
         "p.title": "All projects",
-        "p.meta": "Three selected projects, from a campus site to a mobile app.",
+        "p.meta": "Four selected projects, from a campus site to a mobile app and a personal project.",
         "p.card1.tag": "Web",
         "p.card1.title": "Lab Profile MMT",
         "p.card1.meta": "Frontend + some backend · 6 people · Oct-Dec 2025",
@@ -327,7 +327,12 @@ window.PF_PAGES_EN = {
         "p.card2.desc": "Race photo marketplace where runners find their photos by face search, then buy the originals from the photographer.",
         "p.card3.title": "Sign.L",
         "p.card3.meta": "Project manager, frontend, ML · 5 people · Aug 2026-present",
-        "p.card3.desc": "BISINDO learning app with a camera that reads hand shapes, plus quizzes and a community."
+        "p.card3.desc": "BISINDO learning app with a camera that reads hand shapes, plus quizzes and a community.",
+        "p.card4.tag": "Personal project",
+        "p.card4.title": "Arkutheiast",
+        "p.card4.meta": "Solo · 2026 · HTML, CSS, JS",
+        "p.card4.desc": "An independent game studio site I built from scratch: game catalogue, web app and extension lab, devlog, and contact.",
+        "p.card4.link": "Visit site"
       }
     },
     "experience-all": {

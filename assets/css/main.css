@@ -637,6 +637,7 @@ a {
 .portrait__initials {
   position: relative;
   z-index: 1;
+  display: none;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -661,6 +662,10 @@ a {
 
 .portrait.is-empty .portrait__img {
   display: none;
+}
+
+.portrait.is-empty .portrait__initials {
+  display: block;
 }
 
 /* ---------- stack strip ---------- */
